@@ -14,11 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>resources/Club_List.ods</name>
-			<type>1</type>
-			<location>C:/Users/burge/workspace/PO System/resources/Club_List.ods</location>
-		</link>
-	</linkedResources>
 </projectDescription>
