@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Main {
+	public static String currentFrame = "addclub";
+	
 	//Andrew's Path Code for Resources
 	public static String clubfilepath = ("C:\\Users\\burge\\workspace\\Skyline-Spartabots-PO-System\\PO-System\\resourcesClub_List.ods");
 	public static String vendorfilepath = ("C:\\Users\\burge\\workspace\\Skyline-Spartabots-PO-System\\PO-System\\resourcesVendor_List.ods");

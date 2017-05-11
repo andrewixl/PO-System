@@ -14,8 +14,8 @@ import main_package.StartOptions.Action1.Action2.Action3;
 import main_package.StartOptions.Action1.Action2.Action4.openSettings;
 
 public class StartOptions {
+	public static JFrame options = new JFrame();
 	public static void startOptions(String clubname){
-		JFrame options = new JFrame();  
 		options.setVisible(true);
 		options.setSize(1925,1025);
 		options.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
