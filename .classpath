@@ -3,8 +3,8 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="C:/Source/aspose-cells-17.1.0-java/JDK 1.6/aspose-cells-17.1.0-java/lib/aspose-cells-17.1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Source/aspose-cells-17.1.0-java/JDK 1.6/aspose-cells-17.1.0-java/lib/bcprov-jdk16-146.jar"/>
+	<classpathentry kind="lib" path="C:/Users/burge/workspace/Skyline-Spartabots-PO-System/PO-System/resources/aspose-cells-17.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/burge/workspace/Skyline-Spartabots-PO-System/PO-System/resources/bcprov-jdk16-146.jar"/>
 	<classpathentry kind="lib" path="C:/Users/burge/workspace/mysql-connector-java-5.1.42/mysql-connector-java-5.1.42/mysql-connector-java-5.1.42-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
