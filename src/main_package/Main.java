@@ -20,7 +20,7 @@ public class Main {
 	//public static String vendorfilepath = ("");
 	//public static String expensesfilepath = ("");
 	
-	public static void main(String[] argv) throws Exception {
+	/*public static void main(String[] argv) throws Exception {
 	 getconnection();
 	}
 	
@@ -42,45 +42,9 @@ public class Main {
 
 		        return conn;
 		}   
-	}
+	}*/
 		
-		
-		
-		
-		
-		
-		
-		
-		/*System.out.println("----MySQL JDBC Connection Testing -------");
-	    
-	    try {
-	        Class.forName("com.mysql.jdbc.Driver");
-	    } catch (ClassNotFoundException e) {
-	        System.out.println("Where is your MySQL JDBC Driver?");
-	        e.printStackTrace();
-	        return;
-	    }
-
-	    System.out.println("MySQL JDBC Driver Registered!");
-	    Connection connection = null;
-
-	    try {
-	        connection = DriverManager.
-	                getConnection("jdbc:mysql://localhost:3306/posystem.ctaljdp4qkel.us-west-2.rds.amazonaws.com","andrewixl", "delorean1107");
-	    } catch (SQLException e) {
-	        System.out.println("Connection Failed!:\n" + e.getMessage());
-	    }
-
-	    if (connection != null) {
-	        System.out.println("SUCCESS!!!! You made it, take control     your database now!");
-	    } else {
-	        System.out.println("FAILURE! Failed to make connection!");
-	    }
-
-
-	  }
-}
-	/*public static void main(String[] args) throws Exception
+	public static void main(String[] args) throws Exception
 	{
 		start();
 	}
@@ -93,4 +57,4 @@ public class Main {
 		Select_Club.selectClub();
 	}
 
-}*/
+}
