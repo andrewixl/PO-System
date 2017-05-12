@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Settings {
+	public static int fsize = 
 	public static void settings()
 	{
 		JFrame settingsframe = new JFrame();
