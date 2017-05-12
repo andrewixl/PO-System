@@ -4,7 +4,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileInputStream;
 import java.math.BigDecimal;
 
 import javax.swing.JButton;
@@ -14,12 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import com.aspose.cells.Cell;
-import com.aspose.cells.SaveFormat;
-import com.aspose.cells.Workbook;
-import com.aspose.cells.Worksheet;
-
-import main_package.StartOptions.Action1.Action2.Action4;
+import main_package.StartOptions.Action2.Action4;
 
 public class AddProduct {
 	public static JPanel panel = new JPanel();

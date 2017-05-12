@@ -9,9 +9,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import main_package.StartOptions.Action1.Action2;
-import main_package.StartOptions.Action1.Action2.Action3;
-import main_package.StartOptions.Action1.Action2.Action4.openSettings;
+import main_package.StartOptions.Action2.Action3;
+import main_package.StartOptions.Action2.Action4.openSettings;
 
 public class StartOptions {
 	public static JFrame options = new JFrame();
@@ -67,12 +66,12 @@ public class StartOptions {
 		}
 		static class Action1 extends StartOptions implements ActionListener {        
 			  public void actionPerformed (ActionEvent e) { 
-				/*variables.addingvendor.dispose();
+				//variables.addingvendor.dispose();
 				try {
-					CreatePurchase.createPurchaseWindow();
+					AddProduct.createPurchaseWindow();
 				} catch (Exception e1) {
 				}
-			  }*/
+			  }
 			}   
 			static class Action2 extends StartOptions implements ActionListener {        
 			  public void actionPerformed (ActionEvent e) { 
@@ -87,12 +86,12 @@ public class StartOptions {
 				//}
 			  }*/
 			}  
-			static class Action3 extends StartOptions implements ActionListener {        
+			static class Action3 implements ActionListener {        
 				  public void actionPerformed (ActionEvent e) { 
 					//GeneratePO.generatePOWindow();
 				  }
 				} 
-			static class Action4 extends StartOptions implements ActionListener {        
+			static class Action4 implements ActionListener {        
 				  public void actionPerformed (ActionEvent e) { 
 					/*  if (currentFrame.equals("frame2"))
 						  variables.frame2.dispose();
@@ -103,11 +102,11 @@ public class StartOptions {
 					  createWindow();
 				  }*/
 				} 
-			static class openSettings extends StartOptions implements ActionListener {        
+			static class openSettings implements ActionListener {        
 				  public void actionPerformed (ActionEvent e) { 
 					Settings.settings();
 				  }
 				} 
 			}
 	}
-}}
+}
