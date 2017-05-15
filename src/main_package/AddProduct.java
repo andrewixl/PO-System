@@ -370,6 +370,7 @@ public class AddProduct {
 	static class Action7 implements ActionListener {        
 		  public void actionPerformed (ActionEvent e){ 
 			//VendorManagement.createVendorFrame();
+			  AddVendor.createVendorFrame();
 		  }
 		} 
 }

@@ -1,6 +1,7 @@
 package main_package;
 
 import java.awt.Font;
+import java.util.Arrays;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -40,11 +41,16 @@ import javax.swing.JTextField;
 		    StreetAddress.setBounds(100, 275, 400, 50);
 		    panel.add(StreetAddress);
 		    
-		    JLabel VendorState = new JLabel ("Vendor State");
-			VendorStreet.setFont(new Font("Sans Serif", Font.PLAIN, 20));
+		    JLabel State = new JLabel ("State:");
+			State.setFont(new Font("Sans Serif", Font.PLAIN, 20));
 		    //label.setBounds(left right,up down,width,height);
-			VendorStreet.setBounds(100,350,50,50);
-		    panel.add(VendorStreet);
+			State.setBounds(100,350,100,50);
+		    panel.add(State);
+		    
+		    Arrays.sort(CoreVariables.states);
+		    JComboBox VendorState = new JComboBox(CoreVariables.states);
+		    VendorState.setBounds(100, 400, 250, 50);
+		    panel.add(VendorState);
 		    
 		}	
 
