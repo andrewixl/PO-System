@@ -1,5 +1,6 @@
 package main_package;
 
+import java.util.*;
 import java.awt.Font;
 import java.io.FileInputStream;
 
@@ -38,6 +39,7 @@ public class Add_Club {
 		clubnamefield.setFont(new Font("Sans Serif", Font.PLAIN, 15));
 		clubnamefield.setBounds(100,150,250,50);
 		panel.add(clubnamefield);
+		checkClub(clubnamefield);
 		
 		JLabel advisornamelabel = new JLabel("Advisor Name:");
 		advisornamelabel.setFont(new Font("Sans Serif", Font.PLAIN, 15));
@@ -48,6 +50,7 @@ public class Add_Club {
 	    advisornamefield.setFont(new Font("Sans Serif", Font.PLAIN, 15));
 		advisornamefield.setBounds(400,150,250,50);
 	    panel.add(advisornamefield);
+	    checkClub(advisornamefield);
 	    
 	    JLabel advisoremaillabel = new JLabel("Advisor Email:");
 	    advisoremaillabel.setFont(new Font("Sans Serif", Font.PLAIN, 15));
@@ -58,6 +61,7 @@ public class Add_Club {
 	    advisoremailfield.setFont(new Font("Sans Serif", Font.PLAIN, 15));
 	    advisoremailfield.setBounds(700,150,250,50);
 	    panel.add(advisoremailfield); 
+	    checkClub(advisoremailfield);
 	    
 	    JLabel asbaccountnamelabel = new JLabel("ASB Account Name:");
 	    asbaccountnamelabel.setFont(new Font("Sans Serif", Font.PLAIN, 15));
@@ -68,6 +72,7 @@ public class Add_Club {
 	    asbaccountnamefield.setFont(new Font("Sans Serif", Font.PLAIN, 15));
 	    asbaccountnamefield.setBounds(100,250,250,50);
 	    panel.add(asbaccountnamefield);
+	    checkClub(asbaccountnamefield);
 	    
 	    JLabel asbaccountnumberlabel = new JLabel("ASB Account Number:");
 	    asbaccountnumberlabel.setFont(new Font("Sans Serif", Font.PLAIN, 15));
@@ -78,5 +83,26 @@ public class Add_Club {
 	    asbaccountnumberfield.setFont(new Font("Sans Serif", Font.PLAIN, 15));
 	    asbaccountnumberfield.setBounds(400,250,250,50);
 	    panel.add(asbaccountnumberfield);
+	    checkClubInt(asbaccountnumberfield);
+	}
+	
+	public static void checkClub(JTextField field){
+		String str=field.getText();
+		Scanner input=new Scanner (str);
+		do{
+			if(input.hasNextInt()||input.toString().isEmpty()){
+				field.setText("*ERROR*");
+			}
+		}while(input.hasNext());
+	}
+	
+	public static void checkClubInt(JTextField field){
+		String str=field.getText();
+		Scanner input=new Scanner (str);
+		do{
+		   if(input.hasNextLine()||input.toString().isEmpty()){
+			   field.setText("*ERROR*");
+		   }
+		}while(input.hasNext());
 	}
 }
