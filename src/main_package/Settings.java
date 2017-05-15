@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class Settings {
-	private static JFrame settingsframe = new JFrame();
+	public static JFrame settingsframe = new JFrame();
 	private static String[] fonts = new String[] {"Arial","San Serif", "Verdana", "Wingdings 3"};
     private static Integer[] sizes = new Integer[] {10, 20, 30, 40};
 	private static JComboBox font = new JComboBox<String>(fonts);
@@ -72,7 +72,7 @@ public class Settings {
 			}    
 	static class cancelsettings implements ActionListener {        
 		  public void actionPerformed (ActionEvent e){ 
-			  settingsframe.dispose();
+			  CoreVariables.restartProgram();
 		  }
 		}
 }       

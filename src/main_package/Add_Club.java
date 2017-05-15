@@ -12,13 +12,14 @@ import com.aspose.cells.Workbook;
 import com.aspose.cells.Worksheet;
 
 public class Add_Club {
+	public static JFrame addclubframe = new JFrame();
 	public static void addClub() throws Exception
 	{
 		FileInputStream fstream = new FileInputStream(Main.clubfilepath);
 		Workbook wb = new Workbook(fstream);
 		Worksheet sheet = wb.getWorksheets().get(0);
 		
-		JFrame addclubframe = new JFrame();
+		
 		JPanel panel = new JPanel();
 		addclubframe.setBounds(500,500,500,500);
 		addclubframe.add(panel);
