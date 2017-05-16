@@ -2,13 +2,24 @@ package main_package;
 
 public class CoreVariables {
 	public static String[] vendors = {"AndyMark", "Amazon", "Vex"};
-	public static String[] states = {"California", "Alabama", "Arkansas", "Arizona", "Alaska", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland,", "Massachusetts,", "Michigan,", "Minnesota,", "Mississippi,", "Missouri,", "Montana,", "Nebraska,", "Nevada,", "New Hampshire,", "New Jersey,", "New Mexico,", "New York,", "North Carolina,", "North Dakota,", "Ohio,", "Oklahoma,", "Oregon,", "Pennsylvania,", "Rhode Island,", "South Carolina,", "South Dakota,", "Tennessee,", "Texas,", "Utah,", "Vermont,", "Virginia,", "Washington,", "West Virginia,", "Wisconsin,", "Wyoming" };
+	public static String[] states = {"California", "Alabama", "Arkansas", "Arizona", "Alaska", "Colorado", 
+			"Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", 
+			"Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", 
+			"Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", 
+			"New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", 
+			"Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", 
+			"Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" };
 	//need to sort
 	public static void restartProgram(){
 		Select_Club.selectclubframe.dispose();
 		Add_Club.addclubframe.dispose();
 		StartOptions.options.dispose();
 		Settings.settingsframe.dispose();
-		AddProduct.addproductframe.dispose();		
+		AddProduct.addproductframe.dispose();
+		try {
+			Main.start();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

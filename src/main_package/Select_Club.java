@@ -1,6 +1,7 @@
 package main_package;
 
 import java.awt.Font;
+import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileInputStream;
@@ -111,6 +112,7 @@ public class Select_Club {
 	static class selectclub implements ActionListener {        
 	  public void actionPerformed (ActionEvent e){ 
 		StartOptions.startOptions((String) ClubList.getSelectedItem());
+		selectclubframe.dispose();
 	  }
 	}
 	static class settings implements ActionListener {        

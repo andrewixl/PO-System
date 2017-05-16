@@ -10,7 +10,6 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 	public class AddVendor {
-		public static JComboBox<String> EnterVendors;
 	public static void createVendorFrame() {
 			
 			JFrame Vendorframe = new JFrame();
@@ -27,8 +26,8 @@ import javax.swing.JTextField;
 			EnterVendorName.setBounds(100,100,250,50);
 		    panel.add(EnterVendorName);
 		    
-		    EnterVendors = new JComboBox(CoreVariables.vendors);
-		    EnterVendors.setBounds(100, 150, 250, 50);
+		    JTextField EnterVendors = new JTextField();
+		    EnterVendors.setBounds(100, 150, 300, 50);
 		    panel.add(EnterVendors);
 		    
 		    JLabel VendorStreet = new JLabel ("Vendor Street Address");
@@ -38,7 +37,7 @@ import javax.swing.JTextField;
 		    panel.add(VendorStreet);
 		    
 		    JTextField StreetAddress = new JTextField ();
-		    StreetAddress.setBounds(100, 275, 400, 50);
+		    StreetAddress.setBounds(100, 275, 1000, 50);
 		    panel.add(StreetAddress);
 		    
 		    JLabel State = new JLabel ("State:");
@@ -49,8 +48,28 @@ import javax.swing.JTextField;
 		    
 		    Arrays.sort(CoreVariables.states);
 		    JComboBox VendorState = new JComboBox(CoreVariables.states);
-		    VendorState.setBounds(100, 400, 250, 50);
+		    VendorState.setBounds(100, 400, 200, 50);
 		    panel.add(VendorState);
+		    
+		    JLabel City = new JLabel ("City:");
+			City.setFont(new Font("Sans Serif", Font.PLAIN, 20));
+		    //label.setBounds(left right,up down,width,height);
+			City.setBounds(350,350,100,50);
+		    panel.add(City);
+		    
+		    JTextField VendorCity = new JTextField ();
+		    VendorCity.setBounds(350,400, 200, 50);
+		    panel.add(VendorCity);
+		    
+		    JLabel ZipCode = new JLabel ("Zip Code");
+		    ZipCode.setFont(new Font("Sans Serif", Font.PLAIN, 20));
+		    //label.setBounds(left right,up down,width,height);
+		    ZipCode.setBounds(800,350,100,50);
+		    panel.add(ZipCode);
+		    
+		    JTextField VendorZipCode = new JTextField ();
+		    VendorZipCode.setBounds(700, 400, 100, 50);
+		    panel.add(VendorZipCode);
 		    
 		}	
 
