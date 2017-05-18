@@ -86,6 +86,7 @@ public class Add_Club {
 	    checkClubInt(asbaccountnumberfield);
 	}
 	
+	
 	public static void checkClub(JTextField field){
 		String str=field.getText();
 		Scanner input=new Scanner (str);
@@ -96,11 +97,12 @@ public class Add_Club {
 		}while(input.hasNext());
 	}
 	
+	
 	public static void checkClubInt(JTextField field){
 		String str=field.getText();
 		Scanner input=new Scanner (str);
 		do{
-		   if(input.hasNextLine()||input.toString().isEmpty()){
+		   if(!input.hasNextInt()||input.toString().isEmpty()){
 			   field.setText("*ERROR*");
 		   }
 		}while(input.hasNext());
