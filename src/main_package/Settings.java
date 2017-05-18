@@ -62,7 +62,7 @@ public class Settings {
 			            JOptionPane.YES_NO_OPTION);
 
 			        if(true){
-			        	settingsframe.dispose();
+			        	CoreVariables.restartProgram();
 			        }
 			        else {
 			            JOptionPane.showMessageDialog(null, "Restart Delayed");
@@ -72,7 +72,7 @@ public class Settings {
 			}    
 	static class cancelsettings implements ActionListener {        
 		  public void actionPerformed (ActionEvent e){ 
-			  CoreVariables.restartProgram();
+			  
 		  }
 		}
 }       
