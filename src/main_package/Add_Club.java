@@ -1,8 +1,8 @@
 package main_package;
 
-import java.util.*;
 import java.awt.Font;
 import java.io.FileInputStream;
+import java.util.Scanner;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
