@@ -2,7 +2,7 @@ package main_package;
 
 public class CoreVariables {
 	public static String[] vendors = {"AndyMark", "Amazon", "Vex"};
-	public static String[] states = {"California", "Alabama", "Arkansas", "Arizona", "Alaska", "Colorado", 
+	public static String[] states = {"aa", "California", "Alabama", "Arkansas", "Arizona", "Alaska", "Colorado", 
 			"Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", 
 			"Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", 
 			"Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", 
