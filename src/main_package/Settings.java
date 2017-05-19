@@ -36,6 +36,7 @@ public class Settings {
 	    fontsize.setBounds(50,150,250,50);
 	    panel.add(fontsize);
 	    
+	    
 	    JButton apply = new JButton("Apply");
 		apply.setFont(new Font(fonttype, Font.PLAIN, 20));
 		panel.add(apply);
@@ -62,7 +63,7 @@ public class Settings {
 			            JOptionPane.YES_NO_OPTION);
 
 			        if(true){
-			        	settingsframe.dispose();
+			        	CoreVariables.restartProgram();
 			        }
 			        else {
 			            JOptionPane.showMessageDialog(null, "Restart Delayed");
@@ -72,7 +73,7 @@ public class Settings {
 			}    
 	static class cancelsettings implements ActionListener {        
 		  public void actionPerformed (ActionEvent e){ 
-			  CoreVariables.restartProgram();
+			  
 		  }
 		}
 }       
