@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.math.BigDecimal;
+import java.text.ParseException;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -370,7 +371,12 @@ public class AddProduct {
 	static class Action7 implements ActionListener {        
 		  public void actionPerformed (ActionEvent e){ 
 			//VendorManagement.createVendorFrame();
-			  AddVendor.createVendorFrame();
+			  try {
+				AddVendor.createVendorFrame();
+			} catch (ParseException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 		  }
 		} 
 }
