@@ -73,7 +73,7 @@ public class Settings {
 			}    
 	static class cancelsettings implements ActionListener {        
 		  public void actionPerformed (ActionEvent e){ 
-			  
+			  settingsframe.dispose();
 		  }
 		}
 }       
