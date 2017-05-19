@@ -36,6 +36,7 @@ public class Settings {
 	    fontsize.setBounds(50,150,250,50);
 	    panel.add(fontsize);
 	    
+	    
 	    JButton apply = new JButton("Apply");
 		apply.setFont(new Font(fonttype, Font.PLAIN, 20));
 		panel.add(apply);
