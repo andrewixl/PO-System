@@ -23,8 +23,10 @@ public class Select_Club {
 	public static String[] clubs = new String[]{"Robotics Club"};
 	public static JComboBox<String> ClubList;
 	public static int cellStartValue;
+	public static String fonttype2 = Settings.fonttype;
 	public static void selectClub() throws Exception
 	{
+		System.out.print(fonttype2);
 		getVendors();
 		JPanel panel = new JPanel();
 		selectclubframe.setBounds(500,500,500,500);
@@ -33,28 +35,28 @@ public class Select_Club {
 	    panel.setLayout(null);
 	    
 		JLabel clublabel = new JLabel("Select Club:");
-		clublabel.setFont(new Font("Sans Serif", Font.PLAIN, 15));
+		clublabel.setFont(new Font(fonttype2, Font.PLAIN, 15));
 		clublabel.setBounds(100,100,250,50);
 		panel.add(clublabel);
 		
-		ClubList.setFont(new Font("Sans Serif", Font.PLAIN, 15));
+		ClubList.setFont(new Font(fonttype2, Font.PLAIN, 15));
 		ClubList.setBounds(100,150,250,50);
 	    panel.add(ClubList);
 	    
 	    JButton addclub = new JButton("Add Club");
-	    addclub.setFont(new Font("Sans Serif", Font.PLAIN, 15));
+	    addclub.setFont(new Font(fonttype2, Font.PLAIN, 15));
 	    addclub.setBounds(100, 210, 100, 50);
 	    panel.add(addclub);
 	    addclub.addActionListener (new addclub());
 	    
 	    JButton select = new JButton("Select");
-	    select.setFont(new Font("Sans Serif", Font.PLAIN, 15));
+	    select.setFont(new Font(fonttype2, Font.PLAIN, 15));
 	    select.setBounds(220, 210, 100, 50);
 	    panel.add(select);
 	    select.addActionListener (new selectclub());
 	    
 	    JButton settings = new JButton("Settings");
-	    settings.setFont(new Font("Sans Serif", Font.PLAIN, 15));
+	    settings.setFont(new Font(fonttype2, Font.PLAIN, 15));
 	    settings.setBounds(370, 10, 100, 50);
 	    panel.add(settings);
 	    settings.addActionListener (new settings());

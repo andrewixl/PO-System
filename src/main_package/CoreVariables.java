@@ -1,5 +1,12 @@
 package main_package;
 
+import java.io.FileInputStream;
+
+import com.aspose.cells.Cell;
+import com.aspose.cells.Cells;
+import com.aspose.cells.Workbook;
+import com.aspose.cells.Worksheet;
+
 public class CoreVariables {
 	public static String[] vendors = {"AndyMark", "Amazon", "Vex"};
 	public static String[] states = {"aa", "California", "Alabama", "Arkansas", "Arizona", "Alaska", "Colorado", 
@@ -22,4 +29,13 @@ public class CoreVariables {
 			e.printStackTrace();
 		}
 	}
-}
+	
+	public static void getCurrentFont() throws Exception{
+		FileInputStream fstream = new FileInputStream(Main.localfilepath);
+		Workbook wb = new Workbook(fstream);
+		Worksheet sheet = wb.getWorksheets().get(0);
+		Cells cells = sheet.getCells();
+		String cellFilled = "true";
+		Cell cell = cells.get("B1");
+		Main.fonttype = cell.toString();
+}}

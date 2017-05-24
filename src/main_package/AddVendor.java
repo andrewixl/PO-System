@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.util.Arrays;
-import java.util.Collections;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -59,7 +58,9 @@ import javax.swing.text.MaskFormatter;
 		    panel.add(State);
 		    
 		    
-		    Array.sort(CoreVariables.states);
+		    Arrays.sort(CoreVariables.states);
+		    String selectState = "Select State";
+		    CoreVariables.states[0] = selectState;
 		    JComboBox VendorState = new JComboBox(CoreVariables.states);
 		    VendorState.setBounds(100, 400, 200, 50);
 		    panel.add(VendorState);
