@@ -44,6 +44,8 @@ public class AddProduct {
 	public static JLabel invalid = new JLabel("*");
 	public static JLabel invalid2 = new JLabel("*");
 	public static JLabel invalid3 = new JLabel("*");
+	public static JLabel invalid4 = new JLabel("*");
+	public static JLabel invalid5 = new JLabel("*");
 	
 	public static BigDecimal shippingval;
 	public static BigDecimal taxval;
@@ -300,6 +302,22 @@ public class AddProduct {
 	{
 		productNumber = pntf.getText();
 		productDescription = pdtf.getText();
+		invalid4.setVisible(false);
+		invalid5.setVisible(false);
+		if(productNumber.equals(null)){
+			invalid4.setVisible(true);
+			invalid4.setForeground(Color.red);
+			invalid4.setFont(new Font("Sans Serif", Font.PLAIN, 40));
+			invalid4.setBounds(275,350,250,50);
+			panel.add(invalid4);
+		}
+		if(productDescription.equals(null)){
+			invalid5.setVisible(true);
+			invalid5.setForeground(Color.red);
+			invalid5.setFont(new Font("Sans Serif", Font.PLAIN, 40));
+			invalid5.setBounds(575,350,250,50);
+			panel.add(invalid5);
+		}
 	}
 	/*public static void addToSpreadsheet() throws Exception
 	{
