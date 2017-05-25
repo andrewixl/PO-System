@@ -3,12 +3,17 @@ package main_package;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+import com.aspose.cells.Cells;
+import com.aspose.cells.Workbook;
+import com.aspose.cells.Worksheet;
 
 public class Settings {
 	public static JFrame settingsframe = new JFrame();
@@ -55,6 +60,18 @@ public class Settings {
 	static class applysettings implements ActionListener {        
 		  public void actionPerformed (ActionEvent e){ 
 			fonttype = ((String) font.getSelectedItem());
+			
+			try{
+			FileInputStream fstream = new FileInputStream(Main.localfilepath);
+			Workbook wb = new Workbook(fstream);
+			Worksheet sheet = wb.getWorksheets().get(0);
+			Cells cells = sheet.getCells();
+			cells.setValue(fonttype);
+			}
+			catch(Exception e2){
+				System.out.println("Bad Code");
+			}
+			
 			fsize = (int) (fontsize.getSelectedItem());	
 			int n = JOptionPane.showConfirmDialog(
 			            null,
