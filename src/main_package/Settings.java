@@ -67,9 +67,13 @@ public class Settings {
 			Workbook wb = new Workbook(fstream);
 			Worksheet sheet = wb.getWorksheets().get(0);
 			Cells cells = sheet.getCells();
+<<<<<<< HEAD
 			Cell cell = cells.get("B1");
 			cell.setValue(Main.fonttype);
 			wb.save(Main.localfilepath, SaveFormat.ODS);
+=======
+			//cells.setValue(fonttype);
+>>>>>>> e45c1eeae6536d7325085611fefa6e8216d9f965
 			}
 			catch(Exception e2){
 				System.out.println("Bad Code");
