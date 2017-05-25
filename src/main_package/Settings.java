@@ -11,7 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import com.aspose.cells.Cell;
 import com.aspose.cells.Cells;
+import com.aspose.cells.SaveFormat;
 import com.aspose.cells.Workbook;
 import com.aspose.cells.Worksheet;
 
@@ -22,7 +24,6 @@ public class Settings {
 	private static JComboBox font = new JComboBox<String>(fonts);
 	private static JComboBox fontsize = new JComboBox<Integer>(sizes);
 	
-	public static String fonttype = "Arial";
 	public static int fsize = 20;
 	
 	public static void settings()
@@ -33,24 +34,24 @@ public class Settings {
 		settingsframe.setVisible(true);
 	    panel.setLayout(null);
 	    
-	    font.setFont(new Font(fonttype, Font.PLAIN, 15));
+	    font.setFont(new Font(Main.fonttype, Font.PLAIN, 15));
 	    font.setBounds(50,50,250,50);
 	    panel.add(font);
 	    
-	    fontsize.setFont(new Font(fonttype, Font.PLAIN, 15));
+	    fontsize.setFont(new Font(Main.fonttype, Font.PLAIN, 15));
 	    fontsize.setBounds(50,150,250,50);
 	    panel.add(fontsize);
 	    
 	    
 	    JButton apply = new JButton("Apply");
-		apply.setFont(new Font(fonttype, Font.PLAIN, 20));
+		apply.setFont(new Font(Main.fonttype, Font.PLAIN, 20));
 		panel.add(apply);
 		apply.setBounds(200,230,100,50);
 		//adds action listener for apply button
 		apply.addActionListener (new applysettings());
 		
 		JButton cancel = new JButton("Cancel");
-		cancel.setFont(new Font(fonttype, Font.PLAIN, 20));
+		cancel.setFont(new Font(Main.fonttype, Font.PLAIN, 20));
 		panel.add(cancel);
 		cancel.setBounds(50,230,100,50);
 		//adds action listener for apply button
@@ -59,14 +60,16 @@ public class Settings {
 	}
 	static class applysettings implements ActionListener {        
 		  public void actionPerformed (ActionEvent e){ 
-			fonttype = ((String) font.getSelectedItem());
+			  Main.fonttype = ((String) font.getSelectedItem());
 			
 			try{
 			FileInputStream fstream = new FileInputStream(Main.localfilepath);
 			Workbook wb = new Workbook(fstream);
 			Worksheet sheet = wb.getWorksheets().get(0);
 			Cells cells = sheet.getCells();
-			cells.setValue(fonttype);
+			Cell cell = cells.get("B1");
+			cell.setValue(Main.fonttype);
+			wb.save(Main.localfilepath, SaveFormat.ODS);
 			}
 			catch(Exception e2){
 				System.out.println("Bad Code");
