@@ -63,3 +63,8 @@ $RECYCLE.BIN/
 *.lnk
 src/main_package/AddProduct.java
 *.java
+.classpath
+*.classpath
+*.ods
+resources/Club_List.ods
+.classpath
