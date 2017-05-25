@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.util.Arrays;
+import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -40,6 +41,7 @@ import javax.swing.text.MaskFormatter;
 		    JTextField EnterVendors = new JTextField();
 		    EnterVendors.setBounds(100, 150, 300, 50);
 		    panel.add(EnterVendors);
+		    checkVendor(EnterVendors);
 		    
 		    JLabel VendorStreet = new JLabel ("Vendor Street Address:");
 			VendorStreet.setFont(new Font("Sans Serif", Font.PLAIN, 20));
@@ -50,6 +52,7 @@ import javax.swing.text.MaskFormatter;
 		    JTextField StreetAddress = new JTextField ();
 		    StreetAddress.setBounds(100, 275, 1000, 50);
 		    panel.add(StreetAddress);
+		    checkEmpty(StreetAddress);
 		    
 		    JLabel State = new JLabel ("State:");
 			State.setFont(new Font("Sans Serif", Font.PLAIN, 20));
@@ -74,6 +77,7 @@ import javax.swing.text.MaskFormatter;
 		    JTextField VendorCity = new JTextField ();
 		    VendorCity.setBounds(350,400, 200, 50);
 		    panel.add(VendorCity);
+		    checkVendor(VendorCity);
 		    
 		    JLabel ZipCode = new JLabel ("Zip Code:");
 		    ZipCode.setFont(new Font("Sans Serif", Font.PLAIN, 20));
@@ -84,6 +88,7 @@ import javax.swing.text.MaskFormatter;
 		    JTextField VendorZipCode = new JTextField ();
 		    VendorZipCode.setBounds(600, 400, 100, 50);
 		    panel.add(VendorZipCode);
+		    checkVendorInt(VendorZipCode);
 		    
 		  //creates new phone label
 		    JLabel phonelb = new JLabel("Enter Vendor Phone Number:");
@@ -97,6 +102,7 @@ import javax.swing.text.MaskFormatter;
 		    phoneentry.setFont(new Font("Sans Serif", Font.PLAIN, 25));
 		    phoneentry.setBounds(100,550,250,50);
 		    panel.add(phoneentry);
+		    checkVendorInt(phoneentry);
 		    
 		    //creates new fax label
 		    JLabel faxlb = new JLabel("Enter Vendor Fax Number:");
@@ -109,6 +115,7 @@ import javax.swing.text.MaskFormatter;
 		    faxentry.setFont(new Font("Sans Serif", Font.PLAIN, 25));
 		    faxentry.setBounds(400,550,250,50);
 		    panel.add(faxentry);
+		    checkVendorInt(faxentry);
 		    
 		    JButton addbutton = new JButton("Add");
 		    panel.add(addbutton);
@@ -122,7 +129,38 @@ import javax.swing.text.MaskFormatter;
 		    backButton.setBounds(650, 850, 100, 50);
 		    backButton.setFont(new Font("Sans Serif", Font.PLAIN, 20));
 		    backButton.addActionListener(new Action11());
-		}	
+		}
+	
+	public static void checkVendor(JTextField field){
+		String str=field.getText();
+		Scanner input=new Scanner(str);
+		do{
+			if(input.hasNextInt()||input.toString().isEmpty()){
+				field.setText("*ERROR*");
+			}
+		}while(input.hasNext());
+	}
+	
+	
+	public static void checkVendorInt(JTextField field){
+		String str=field.getText();
+		Scanner input=new Scanner(str);
+		do{
+			if(input.hasNextLine()||input.toString().isEmpty()){
+				field.setText("*ERROR");
+			}
+		}while(input.hasNext());
+	}
+	
+		
+	public static void checkEmpty(JTextField field){
+		String str=field.getText();
+		if(str.isEmpty()){
+			field.setText("*ERROR*");
+		}
+	}
+	
+	
 	static class Action11  implements ActionListener {
 
 		@Override
@@ -131,7 +169,7 @@ import javax.swing.text.MaskFormatter;
 			AddProduct.createPurchaseWindow();
 		}
 		
-	
+		
 }
 		
 
