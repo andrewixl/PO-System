@@ -60,7 +60,6 @@ import javax.swing.text.MaskFormatter;
 			State.setBounds(100,350,100,50);
 		    panel.add(State);
 		    
-		    
 		    Arrays.sort(CoreVariables.states);
 		    String selectState = "Select State";
 		    CoreVariables.states[0] = selectState;
@@ -131,11 +130,12 @@ import javax.swing.text.MaskFormatter;
 		    backButton.addActionListener(new Action11());
 		}
 	
+	
 	public static void checkVendor(JTextField field){
 		String str=field.getText();
-		Scanner input=new Scanner(str);
+		Scanner input=new Scanner(str); 
 		do{
-			if(input.hasNextInt()||input.toString().isEmpty()){
+			if(input.hasNextInt()||str.isEmpty()){
 				field.setText("*ERROR*");
 			}
 		}while(input.hasNext());
@@ -146,8 +146,8 @@ import javax.swing.text.MaskFormatter;
 		String str=field.getText();
 		Scanner input=new Scanner(str);
 		do{
-			if(input.hasNextLine()||input.toString().isEmpty()){
-				field.setText("*ERROR");
+			if(input.hasNextLine()||str.isEmpty()){
+				field.setText("*ERROR*"); 
 			}
 		}while(input.hasNext());
 	}
@@ -168,7 +168,6 @@ import javax.swing.text.MaskFormatter;
 			// TODO Auto-generated method stub
 			AddProduct.createPurchaseWindow();
 		}
-		
 		
 }
 		
