@@ -139,9 +139,8 @@ import javax.swing.text.MaskFormatter;
 				field.setText("*ERROR*");
 			}
 		}while(input.hasNext());
+		input.close();
 	}
-	
-	
 	public static void checkVendorInt(JTextField field){
 		String str=field.getText();
 		Scanner input=new Scanner(str);
@@ -150,9 +149,8 @@ import javax.swing.text.MaskFormatter;
 				field.setText("*ERROR*"); 
 			}
 		}while(input.hasNext());
-	}
-	
-		
+		input.close();
+	}	
 	public static void checkEmpty(JTextField field){
 		String str=field.getText();
 		if(str.isEmpty()){
