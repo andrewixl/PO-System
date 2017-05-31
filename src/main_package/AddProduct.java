@@ -304,14 +304,14 @@ public class AddProduct {
 		productDescription = pdtf.getText();
 		invalid4.setVisible(false);
 		invalid5.setVisible(false);
-		if(productNumber.equals(null)){
+		if(productNumber.equals(" ")){
 			invalid4.setVisible(true);
 			invalid4.setForeground(Color.red);
 			invalid4.setFont(new Font("Sans Serif", Font.PLAIN, 40));
 			invalid4.setBounds(275,350,250,50);
 			panel.add(invalid4);
 		}
-		if(productDescription.equals(null)){
+		if(productDescription.equals(" ")){
 			invalid5.setVisible(true);
 			invalid5.setForeground(Color.red);
 			invalid5.setFont(new Font("Sans Serif", Font.PLAIN, 40));
@@ -364,6 +364,7 @@ public class AddProduct {
 	static class Action5 implements ActionListener {        
 		  public void actionPerformed (ActionEvent e) { 
 			  checkVendor();
+			  setProductNumberAndDescription();
 			  calculateSubtotal();	
 			  calculateShipping();
 			  calculateTax();
