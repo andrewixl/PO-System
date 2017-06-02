@@ -1,6 +1,7 @@
 package main_package;
 
 import java.awt.Font;
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.lang.reflect.Array;
@@ -22,6 +23,8 @@ import javax.swing.text.MaskFormatter;
 		public static JFormattedTextField phoneentry;
 	    public static JFormattedTextField faxentry;
 	    public static MaskFormatter phoneformat;
+	    public static JLabel error=new JLabel("*");
+	    public static JPanel errorPanel=new JPanel();
 	public static void createVendorFrame() throws ParseException {
 			
 			JFrame Vendorframe = new JFrame();
@@ -52,7 +55,7 @@ import javax.swing.text.MaskFormatter;
 		    JTextField StreetAddress = new JTextField ();
 		    StreetAddress.setBounds(100, 275, 1000, 50);
 		    panel.add(StreetAddress);
-		    checkEmpty(StreetAddress);
+		    checkVendorInt(StreetAddress);
 		    
 		    JLabel State = new JLabel ("State:");
 			State.setFont(new Font("Sans Serif", Font.PLAIN, 20));
@@ -132,32 +135,31 @@ import javax.swing.text.MaskFormatter;
 	
 	
 	public static void checkVendor(JTextField field){
-		String str=field.getText();
-		Scanner input=new Scanner(str); 
-		do{
-			if(input.hasNextInt()||str.isEmpty()){
-				field.setText("*ERROR*");
-			}
-		}while(input.hasNext());
-		input.close();
-	}
-	public static void checkVendorInt(JTextField field){
-		String str=field.getText();
-		Scanner input=new Scanner(str);
-		do{
-			if(input.hasNextLine()||str.isEmpty()){
-				field.setText("*ERROR*"); 
-			}
-		}while(input.hasNext());
-		input.close();
-	}	
-	public static void checkEmpty(JTextField field){
-		String str=field.getText();
-		if(str.isEmpty()){
-			field.setText("*ERROR*");
+		Scanner input=new Scanner(field.getText());
+		try{
+			error.setVisible(false);
+			input.nextLine();
+		}catch (NumberFormatException e){
+			error.setVisible(true);
+			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
+			error.setForeground(Color.red);
+			error.setBounds(200,250,250,50);
+			errorPanel.add(error);
 		}
 	}
-	
+	public static void checkVendorInt(JTextField field){
+		int integer;
+		try{
+			error.setVisible(false);
+			integer=Integer.parseInt(field.getText());
+		}catch(NumberFormatException e){
+			error.setVisible(true);
+			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
+			error.setForeground(Color.red);
+			error.setBounds(200,250,250,50);
+			errorPanel.add(error);
+		}
+	}	
 	
 	static class Action11  implements ActionListener {
 
