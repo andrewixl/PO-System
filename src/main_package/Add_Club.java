@@ -8,6 +8,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.plaf.basic.BasicSliderUI.ChangeHandler;
 import java.text.ParseException;
 import com.aspose.cells.Workbook;
 import com.aspose.cells.Worksheet;
@@ -88,11 +89,18 @@ public class Add_Club {
 		try{
 			error.setVisible(false);
 			integer=Integer.parseInt(field.getText());
-		}catch(NumberFormatException e){
+		}catch(NumberFormatException e){ 
 			error.setVisible(true);
 			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
 			error.setForeground(Color.red);
-			error.setBounds(200,250,250,50);
+			error.setBounds(field.getBounds());
+			errorPanel.add(error);
+		}
+		if(field.equals(null)){
+			error.setVisible(true);
+			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
+			error.setForeground(Color.red);
+			error.setBounds(field.getBounds());
 			errorPanel.add(error);
 		}
 	}
@@ -105,7 +113,14 @@ public class Add_Club {
 			error.setVisible(true);
 			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
 			error.setForeground(Color.red);
-			error.setBounds(200,250,250,50);
+			error.setBounds(field.getBounds());
+			errorPanel.add(error);
+		}
+		if(field.equals(null)){
+			error.setVisible(true);
+			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
+			error.setForeground(Color.red);
+			error.setBounds(field.getBounds());
 			errorPanel.add(error);
 		}
 	}

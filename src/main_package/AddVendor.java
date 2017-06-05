@@ -146,6 +146,13 @@ import javax.swing.text.MaskFormatter;
 			error.setBounds(200,250,250,50);
 			errorPanel.add(error);
 		}
+		if(field.equals(null)){
+			error.setVisible(true);
+			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
+			error.setForeground(Color.red);
+			error.setBounds(field.getBounds());
+			errorPanel.add(error);
+		}
 	}
 	public static void checkVendorInt(JTextField field){
 		int integer;
@@ -157,6 +164,13 @@ import javax.swing.text.MaskFormatter;
 			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
 			error.setForeground(Color.red);
 			error.setBounds(200,250,250,50);
+			errorPanel.add(error);
+		}
+		if(field.equals(null)){
+			error.setVisible(true);
+			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
+			error.setForeground(Color.red);
+			error.setBounds(field.getBounds());
 			errorPanel.add(error);
 		}
 	}	
