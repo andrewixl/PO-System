@@ -76,7 +76,7 @@ public class Add_Club {
 	    asbAccountNumberField.setBounds(400,250,250,50);
 	    panel.add(asbAccountNumberLabel);
 	    panel.add(asbAccountNumberField);
-	    checkClubInt(asbAccountNumberField);
+	    checkError(asbAccountNumberField);
 	}
 	
 	
@@ -84,31 +84,14 @@ public class Add_Club {
 		label.setFont(new Font("Sans Serif", Font.PLAIN, 15));
 		field.setFont(new Font("Sans Serif", Font.PLAIN, 15));
 	}
-	public static void checkClubInt(JTextField field){
+	
+	public static void checkError(JTextField field){
+		Scanner input=new Scanner(field.getText());
 		int integer;
 		try{
 			error.setVisible(false);
-			integer=Integer.parseInt(field.getText());
-		}catch(NumberFormatException e){ 
-			error.setVisible(true);
-			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
-			error.setForeground(Color.red);
-			error.setBounds(field.getBounds());
-			errorPanel.add(error);
-		}
-		if(field.equals(null)){
-			error.setVisible(true);
-			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
-			error.setForeground(Color.red);
-			error.setBounds(field.getBounds());
-			errorPanel.add(error);
-		}
-	}
-	public static void checkError(JTextField field){
-		Scanner input=new Scanner(field.getText());
-		try{
-			error.setVisible(false);
 			input.nextLine();
+			integer=Integer.parseInt(field.getText());
 		}catch (NumberFormatException e){
 			error.setVisible(true);
 			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));

@@ -55,7 +55,7 @@ import javax.swing.text.MaskFormatter;
 		    JTextField StreetAddress = new JTextField ();
 		    StreetAddress.setBounds(100, 275, 1000, 50);
 		    panel.add(StreetAddress);
-		    checkVendorInt(StreetAddress);
+		    checkVendor(StreetAddress);
 		    
 		    JLabel State = new JLabel ("State:");
 			State.setFont(new Font("Sans Serif", Font.PLAIN, 20));
@@ -90,7 +90,7 @@ import javax.swing.text.MaskFormatter;
 		    JTextField VendorZipCode = new JTextField ();
 		    VendorZipCode.setBounds(600, 400, 100, 50);
 		    panel.add(VendorZipCode);
-		    checkVendorInt(VendorZipCode);
+		    checkVendor(VendorZipCode);
 		    
 		  //creates new phone label
 		    JLabel phonelb = new JLabel("Enter Vendor Phone Number:");
@@ -104,7 +104,7 @@ import javax.swing.text.MaskFormatter;
 		    phoneentry.setFont(new Font("Sans Serif", Font.PLAIN, 25));
 		    phoneentry.setBounds(100,550,250,50);
 		    panel.add(phoneentry);
-		    checkVendorInt(phoneentry);
+		    checkVendor(phoneentry);
 		    
 		    //creates new fax label
 		    JLabel faxlb = new JLabel("Enter Vendor Fax Number:");
@@ -117,7 +117,7 @@ import javax.swing.text.MaskFormatter;
 		    faxentry.setFont(new Font("Sans Serif", Font.PLAIN, 25));
 		    faxentry.setBounds(400,550,250,50);
 		    panel.add(faxentry);
-		    checkVendorInt(faxentry);
+		    checkVendor(faxentry);
 		    
 		    JButton addbutton = new JButton("Add");
 		    panel.add(addbutton);
@@ -136,9 +136,11 @@ import javax.swing.text.MaskFormatter;
 	
 	public static void checkVendor(JTextField field){
 		Scanner input=new Scanner(field.getText());
+		int integer;
 		try{
 			error.setVisible(false);
 			input.nextLine();
+			integer=Integer.parseInt(field.getText());
 		}catch (NumberFormatException e){
 			error.setVisible(true);
 			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
@@ -154,26 +156,6 @@ import javax.swing.text.MaskFormatter;
 			errorPanel.add(error);
 		}
 	}
-	public static void checkVendorInt(JTextField field){
-		int integer;
-		try{
-			error.setVisible(false);
-			integer=Integer.parseInt(field.getText());
-		}catch(NumberFormatException e){
-			error.setVisible(true);
-			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
-			error.setForeground(Color.red);
-			error.setBounds(200,250,250,50);
-			errorPanel.add(error);
-		}
-		if(field.equals(null)){
-			error.setVisible(true);
-			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
-			error.setForeground(Color.red);
-			error.setBounds(field.getBounds());
-			errorPanel.add(error);
-		}
-	}	
 	
 	static class Action11  implements ActionListener {
 
