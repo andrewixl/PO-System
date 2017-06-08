@@ -25,9 +25,10 @@ import javax.swing.text.MaskFormatter;
 	    public static MaskFormatter phoneformat;
 	    public static JLabel error=new JLabel("*");
 	    public static JPanel errorPanel=new JPanel();
-	public static void createVendorFrame() throws ParseException {
+	    public static JFrame Vendorframe = new JFrame();
+	    public static void createVendorFrame() throws ParseException {
 			
-			JFrame Vendorframe = new JFrame();
+			
 			JPanel panel = new JPanel();
 			Vendorframe.setExtendedState(Vendorframe.getExtendedState() | JFrame.MAXIMIZED_BOTH);
 			Vendorframe.setBounds(1000, 1000, 1000, 1000);
@@ -124,7 +125,7 @@ import javax.swing.text.MaskFormatter;
 		    addbutton.setBounds(800,850,100,50);
 		    addbutton.setFont(new Font("Sans Serif", Font.PLAIN, 20));
 		    //adds action listener for button4
-		    //addbutton.addActionListener (new ActionAdd());
+		   // addbutton.addActionListener (new ActionAdd());
 		    
 		    JButton backButton = new JButton("Back");
 		    panel.add(backButton);
@@ -135,11 +136,9 @@ import javax.swing.text.MaskFormatter;
 	
 	
 	public static void checkVendor(JTextField field){
-		Scanner input=new Scanner(field.getText());
 		int integer;
 		try{
 			error.setVisible(false);
-			input.nextLine();
 			integer=Integer.parseInt(field.getText());
 		}catch (NumberFormatException e){
 			error.setVisible(true);
@@ -163,6 +162,7 @@ import javax.swing.text.MaskFormatter;
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Auto-generated method stub
 			AddProduct.createPurchaseWindow();
+			Vendorframe.setVisible(false);
 		}
 		
 }
