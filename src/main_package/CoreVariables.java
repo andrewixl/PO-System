@@ -24,7 +24,7 @@ public class CoreVariables {
 		Settings.settingsframe.dispose();
 		AddProduct.addproductframe.dispose();
 		try {
-			Main.start();
+			//Main.start();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
