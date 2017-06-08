@@ -32,7 +32,7 @@ public class Add_Club {
 	    addClubFrame.setVisible(false);
 	    addClubFrame.setVisible(true);
 	    
-	    
+	    //Creates label and field to enter name of club
 	    JLabel clubNameLabel = new JLabel("Offical Club Name:");
 		JTextField clubNameField = new JTextField();
 		setFont(clubNameLabel, clubNameField);
@@ -42,6 +42,7 @@ public class Add_Club {
 		panel.add(clubNameField);
 		checkError(clubNameField);
 		
+		//Creates label and field to enter name of advisor
 		JLabel advisorNameLabel = new JLabel("Advisor Name:");
 	    JTextField advisorNameField = new JTextField();
 	    setFont(advisorNameLabel, advisorNameField);
@@ -51,6 +52,7 @@ public class Add_Club {
 	    panel.add(advisorNameField);
 	    checkError(advisorNameField); 
 	    
+	    //Creates label and field to enter email of advisor
 	    JLabel advisorEmailLabel = new JLabel("Advisor Email:");
 	    JTextField advisorEmailField = new JTextField("@issaquah.wednet.edu");
 	    setFont(advisorEmailLabel, advisorEmailField);
@@ -60,6 +62,7 @@ public class Add_Club {
 	    panel.add(advisorEmailField); 
 	    checkError(advisorEmailField);
 	    
+	    //Creates label and field to enter asb account name
 	    JLabel asbAccountNameLabel = new JLabel("ASB Account Name:");
 	    JTextField asbAccountNameField = new JTextField();
 	    setFont(asbAccountNameLabel, asbAccountNameField);
@@ -69,6 +72,7 @@ public class Add_Club {
 	    panel.add(asbAccountNameField);
 	    checkError(asbAccountNameField);
 	    
+	    //Creates label and field to enter the asb account number
 	    JLabel asbAccountNumberLabel = new JLabel("ASB Account Number:");
 	    JTextField asbAccountNumberField = new JTextField();
 	    setFont(asbAccountNumberLabel, asbAccountNumberField);
@@ -86,12 +90,9 @@ public class Add_Club {
 	}
 	
 	public static void checkError(JTextField field){
-		Scanner input=new Scanner(field.getText());
-		int integer;
 		try{
 			error.setVisible(false);
-			input.nextLine();
-			integer=Integer.parseInt(field.getText());
+			int integer=Integer.parseInt(field.getText());
 		}catch (NumberFormatException e){
 			error.setVisible(true);
 			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
