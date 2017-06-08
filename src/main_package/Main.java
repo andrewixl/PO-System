@@ -2,7 +2,10 @@ package main_package;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import com.mysql.jdbc.PreparedStatement;
 
 public class Main {
 	public static String currentFrame = "addclub";
@@ -25,8 +28,8 @@ public class Main {
 	//public static String vendorfilepath = ("");
 	//public static String expensesfilepath = ("");
 	
-	/*public static void main(String[] argv) throws Exception {
-	 getconnection();
+	public static void main(String[] argv) throws Exception {
+	getconnection();
 	}
 	
 	public static Connection getconnection(){
@@ -37,8 +40,17 @@ public class Main {
 		        Connection conn = null;
 
 		        try {
-		            conn = (Connection) DriverManager.getConnection(connectionUrl, dbUser, dbPwd);
+		            //conn = (Connection) DriverManager.getConnection(connectionUrl, dbUser, dbPwd);
+		        	Connection connect = DriverManager.getConnection(connectionUrl, dbUser, dbPwd);
 		            System.out.println("conn Available");
+		            PreparedStatement statement = (PreparedStatement) connect.prepareStatement("SELECT * FROM club_data.club_list");
+		            ResultSet data = statement.executeQuery();
+		            
+		            while (data.next()){
+		            	System.out.print(data.getObject("club_id"));
+		            }
+		            
+		            statement.close();
 		        } catch (SQLException e) {
 		            // TODO Auto-generated catch block
 		            e.printStackTrace();
@@ -47,9 +59,9 @@ public class Main {
 
 		        return conn;
 		}   
-	}*/
+	
 		
-	public static void main(String[] args) throws Exception
+	/*public static void main(String[] args) throws Exception
 	{
 		CoreVariables.getCurrentFont();
 		start();
@@ -62,6 +74,6 @@ public class Main {
 		instance.createSpreadsheet();
 		
 		Select_Club.selectClub();
-	}
+	}*/
 
 }

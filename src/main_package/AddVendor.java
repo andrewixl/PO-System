@@ -76,7 +76,7 @@ import javax.swing.text.MaskFormatter;
 		    JTextField VendorCity = new JTextField ();
 		    VendorCity.setBounds(350,400, 200, 50);
 		    panel.add(VendorCity);
-		    checkVendor(VendorCity);
+		    //checkVendor(VendorCity);
 		    
 		    JLabel ZipCode = new JLabel ("Zip Code:");
 		    ZipCode.setFont(new Font("Sans Serif", Font.PLAIN, 20));
@@ -89,7 +89,7 @@ import javax.swing.text.MaskFormatter;
 		    panel.add(VendorZipCode);
 		    checkVendorInt(VendorZipCode);
 		    
-		  //creates new phone label
+		    //creates new phone label
 		    JLabel phonelb = new JLabel("Enter Vendor Phone Number:");
 		    phonelb.setFont(new Font("Sans Serif", Font.PLAIN, 20));
 		    phonelb.setBounds(100,500,300,50);
@@ -127,7 +127,7 @@ import javax.swing.text.MaskFormatter;
 		    panel.add(backButton);
 		    backButton.setBounds(650, 850, 100, 50);
 		    backButton.setFont(new Font("Sans Serif", Font.PLAIN, 20));
-		    backButton.addActionListener(new Action11());
+		    //backButton.addActionListener(new Action11());
 		}
 	
 	
