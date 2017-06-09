@@ -20,14 +20,13 @@ import com.aspose.cells.Worksheet;
 
 public class Select_Club {
 	public static JFrame selectclubframe = new JFrame("PO System");
-	public static String[] clubs = new String[]{"Robotics Club"};
 	public static JComboBox<String> ClubList;
 	public static int cellStartValue;
 	//public static String fonttype2 = Main.fonttype;
 	public static void selectClub() throws Exception
 	{
 		System.out.print(Main.fonttype);
-		getVendors();
+		getClubs();
 		JPanel panel = new JPanel();
 		selectclubframe.setBounds(500,500,500,500);
 		selectclubframe.add(panel);
@@ -65,40 +64,10 @@ public class Select_Club {
 	    selectclubframe.setVisible(true);
 	    
 	}
-	public static void getVendors() throws Exception
+	public static void getClubs() throws Exception
 	{
-		FileInputStream fstream = new FileInputStream(Main.clubfilepath);
-		Workbook wb = new Workbook(fstream);
-		Worksheet sheet = wb.getWorksheets().get(0);
-		Cells cells = sheet.getCells();
-		String cellFilled = "true";
-		int startcell = 1;
-		while (cellFilled.equals("true"))
-		{
-			String startcells = Integer.toString(startcell);
-			String val = "A" + startcells;
-			Cell cell = cells.get(val);
-			switch (cell.getType()) {
-			case com.aspose.cells.CellValueType.IS_STRING:
-				startcell++;
-				break;
-			case com.aspose.cells.CellValueType.IS_NULL:
-				cellFilled = "false";
-				startcell-=2;
-				break;
-			}
-		}
-		cellStartValue = startcell;
-		Select_Club.clubs = new String[cellStartValue+2];
-		Select_Club.clubs[0] = "Select Club";
-		for (int i = 0; i<=startcell; i++)
-		{
-			String startcells = Integer.toString(i+1);
-			Cell cell = cells.get("A" + startcells);
-			Select_Club.clubs[i+1] = (String) cell.getValue();
-		}
-		Arrays.sort(Select_Club.clubs, 1, Select_Club.clubs.length);
-		Select_Club.ClubList = new JComboBox<String>(Select_Club.clubs);
+		Arrays.sort(SQLServer.clubs);
+		Select_Club.ClubList = new JComboBox<String>(SQLServer.clubs);
 	}
 	static class addclub implements ActionListener {        
 		  public void actionPerformed (ActionEvent e){ 
