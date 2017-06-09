@@ -3,10 +3,6 @@
 public class Main {
 	public static String currentFrame = "addclub";
 	public static String fonttype;
-	/*public static int columns;
-	public static String fonttype;
-	public static String[] clubs;*/
-	//public static String[] clubs = new String[];
 	
 	//Andrew's Path Code for Resources
 	public static String clubfilepath = ("C:\\Users\\burge\\workspace\\Skyline-Spartabots-PO-System\\PO-System\\resources\\Club_List.ods");
@@ -26,51 +22,6 @@ public class Main {
 	//public static String vendorfilepath = ("/Users/juliapinx/Documents/GitHub/PO-System/resources/Vendor_List.ods");
 	//public static String expensesfilepath = ("/Users/juliapinx/Documents/GitHub/PO-System/resources/Expenses.ods");
 	//public static String localfilepath = ("/Users/juliapinx/Documents/GitHub/PO-System/resources/local.ods");
-	
-	/*public static void main(String[] argv) throws Exception {
-	SQLServer.getconnection();
-	}*/
-	
-	/*public static Connection getconnection(){
-		     String connectionUrl = "jdbc:mysql://posystem.ctaljdp4qkel.us-west-2.rds.amazonaws.com:3306";
-		        String dbUser = "andrewixl";
-		        String dbPwd = "delorean1107";
-		        Connection conn = null;
-
-		        try {
-		        	Connection connect = DriverManager.getConnection(connectionUrl, dbUser, dbPwd);
-		            System.out.println("conn Available");
-		            PreparedStatement statement = (PreparedStatement) connect.prepareStatement("SELECT * FROM club_data.club_list");
-		            ResultSet data = statement.executeQuery();
-		            
-		            PreparedStatement statement1 = (PreparedStatement) connect.prepareStatement("SELECT COUNT(*) AS rowcount FROM club_data.club_list");
-		            ResultSet r = statement1.executeQuery();
-		            r.next();
-		            int count = r.getInt("rowcount");
-		            r.close();
-		            columns = count;
-		            
-		            clubs = new String[columns];
-		            while (data.next()){
-		            	for (int i = 0; i < columns; i++){
-		            		if (clubs[i] == null){
-		            			clubs[i] = (String) data.getObject("club_name");
-		            			i = columns;
-		            		}
-		            	}  	
-		            }
-		            System.out.println(Arrays.toString(clubs));
-		            
-		            statement.close();
-		        } catch (SQLException e) {
-		            // TODO Auto-generated catch block
-		            e.printStackTrace();
-		            System.out.println("fetch option error"+e.getLocalizedMessage());
-		        }
-
-		        return conn;
-		}  */ 
-	
 		
 	public static void main(String[] args) throws Exception
 	{
@@ -78,7 +29,6 @@ public class Main {
 		CoreVariables.getCurrentFont();
 		start();
 	}
-	//public static String fonttype();
 	public static void start() throws Exception
 	{
 		//label.setBounds(left right,up down,width,height);
