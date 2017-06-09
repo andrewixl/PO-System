@@ -1,18 +1,11 @@
 	package main_package;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.Arrays;
-
-import com.mysql.jdbc.PreparedStatement;
-
 public class Main {
 	public static String currentFrame = "addclub";
-	public static int columns;
 	public static String fonttype;
-	public static String[] clubs;
+	/*public static int columns;
+	public static String fonttype;
+	public static String[] clubs;*/
 	//public static String[] clubs = new String[];
 	
 	//Andrew's Path Code for Resources
@@ -34,11 +27,11 @@ public class Main {
 	//public static String expensesfilepath = ("/Users/juliapinx/Documents/GitHub/PO-System/resources/Expenses.ods");
 	//public static String localfilepath = ("/Users/juliapinx/Documents/GitHub/PO-System/resources/local.ods");
 	
-	public static void main(String[] argv) throws Exception {
-	getconnection();
-	}
+	/*public static void main(String[] argv) throws Exception {
+	SQLServer.getconnection();
+	}*/
 	
-	public static Connection getconnection(){
+	/*public static Connection getconnection(){
 		     String connectionUrl = "jdbc:mysql://posystem.ctaljdp4qkel.us-west-2.rds.amazonaws.com:3306";
 		        String dbUser = "andrewixl";
 		        String dbPwd = "delorean1107";
@@ -76,11 +69,12 @@ public class Main {
 		        }
 
 		        return conn;
-		}   
+		}  */ 
 	
 		
-	/*public static void main(String[] args) throws Exception
+	public static void main(String[] args) throws Exception
 	{
+		SQLServer.getconnection();
 		CoreVariables.getCurrentFont();
 		start();
 	}
@@ -92,6 +86,6 @@ public class Main {
 		instance.createSpreadsheet();
 		
 		Select_Club.selectClub();
-	}*/
+	}
 
 }
