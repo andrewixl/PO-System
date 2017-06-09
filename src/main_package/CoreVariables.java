@@ -19,7 +19,7 @@ public class CoreVariables {
 	//need to sort
 	public static void restartProgram(){
 		Select_Club.selectclubframe.dispose();
-		Add_Club.addclubframe.dispose();
+		Add_Club.addClubFrame.dispose();
 		StartOptions.options.dispose();
 		Settings.settingsframe.dispose();
 		AddProduct.addproductframe.dispose();

@@ -58,7 +58,8 @@ public class AddProduct {
 		StartOptions.options.dispose();
 		Main.currentFrame = "addproductframe";
 		addproductframe.setVisible(true);
-	    addproductframe.setSize(1925,1025);
+		addproductframe.setExtendedState(addproductframe.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+	    //addproductframe.setSize(1925,1025);
 	    addproductframe.add(panel);
 	    panel.setLayout(null);
 	    
@@ -392,6 +393,7 @@ public class AddProduct {
 			//VendorManagement.createVendorFrame();
 			  try {
 				AddVendor.createVendorFrame();
+				addproductframe.setVisible(false);
 			} catch (ParseException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

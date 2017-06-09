@@ -88,7 +88,7 @@ public class StartOptions {
 			}  
 			static class Action3 implements ActionListener {        
 				  public void actionPerformed (ActionEvent e) { 
-					//GeneratePO.generatePOWindow();
+					StatusProducts.GeneratePO();
 				  }
 				} 
 			static class Action4 implements ActionListener {        

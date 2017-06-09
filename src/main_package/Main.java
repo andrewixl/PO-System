@@ -29,9 +29,10 @@ public class Main {
 	//public static String localfilepath = ("C:\\Users\\linrog18\\Documents\\PO-System\\resources\\local.ods");
 	
 	//Julia's Path Code for Resources
-	//public static String clubfilepath = ("");
-	//public static String vendorfilepath = ("");
-	//public static String expensesfilepath = ("");
+	//public static String clubfilepath = ("/Users/juliapinx/Documents/GitHub/PO-System/resources/Club_List.ods");
+	//public static String vendorfilepath = ("/Users/juliapinx/Documents/GitHub/PO-System/resources/Vendor_List.ods");
+	//public static String expensesfilepath = ("/Users/juliapinx/Documents/GitHub/PO-System/resources/Expenses.ods");
+	//public static String localfilepath = ("/Users/juliapinx/Documents/GitHub/PO-System/resources/local.ods");
 	
 	public static void main(String[] argv) throws Exception {
 	getconnection();
