@@ -1,6 +1,7 @@
 package main_package;
 
 import java.awt.Font;
+import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,12 +15,16 @@ import main_package.StartOptions.Action2.Action4.openSettings;
 
 public class StartOptions {
 	public static JFrame options = new JFrame();
+	private static int oriWidth = 1920;
+	private static int oriHeight = 1080;
 	public static void startOptions(String clubname){
 		options.setVisible(true);
-		options.setSize(1925,1025);
 		options.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		options.setExtendedState(options.getExtendedState() | JFrame.MAXIMIZED_BOTH);
 		
+		Rectangle r = options.getBounds();
+		int h = r.height/oriHeight;
+		int w = r.width/oriWidth;
 		//creates new panel
 		JPanel panel = new JPanel();
 		options.add(panel);
