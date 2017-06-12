@@ -25,7 +25,7 @@ public class Select_Club {
 	//public static String fonttype2 = Main.fonttype;
 	public static void selectClub() throws Exception
 	{
-		System.out.print(Main.fonttype);
+		System.out.println(Main.fonttype);
 		getClubs();
 		JPanel panel = new JPanel();
 		selectclubframe.setBounds(500,500,500,500);
