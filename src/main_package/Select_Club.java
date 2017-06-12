@@ -66,7 +66,6 @@ public class Select_Club {
 	}
 	public static void getClubs() throws Exception
 	{
-		Arrays.sort(SQLServer.clubs);
 		Select_Club.ClubList = new JComboBox<String>(SQLServer.clubs);
 	}
 	static class addclub implements ActionListener {        

@@ -31,7 +31,7 @@ public class AddProduct {
 	public static String productDescription;
 	
 	public static JFrame addproductframe = new JFrame();
-	public static JComboBox selectVendor = new JComboBox<String>(CoreVariables.vendors);
+	public static JComboBox selectVendor = new JComboBox<String>(SQLServer.vendors);
 	public static JTextField textfield = new JTextField(" ", 2);
 	public static JTextField pntf = new JTextField(" ", 2);
 	public static JTextField pdtf = new JTextField(" ", 2);

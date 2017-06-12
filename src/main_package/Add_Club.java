@@ -20,9 +20,9 @@ public class Add_Club {
 	public static JPanel errorPanel=new JPanel();
 	
 	public static void addClub() throws Exception{
-		FileInputStream fstream = new FileInputStream(Main.clubfilepath);
-		Workbook wb = new Workbook(fstream);
-		Worksheet sheet = wb.getWorksheets().get(0);
+		//FileInputStream fstream = new FileInputStream(Main.clubfilepath);
+		//Workbook wb = new Workbook(fstream);
+		//Worksheet sheet = wb.getWorksheets().get(0);
 		
 		JPanel panel = new JPanel();
 		addClubFrame.setBounds(500,500,500,500);
