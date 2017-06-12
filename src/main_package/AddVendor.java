@@ -30,6 +30,7 @@ import javax.swing.text.MaskFormatter;
 	    public static JFormattedTextField faxentry;
 	    public static MaskFormatter phoneformat;
 	    public static JLabel error=new JLabel("*");
+	    public static JLabel error2=new JLabel("*");
 	    public static JPanel errorPanel=new JPanel();
 	    public static JFrame Vendorframe = new JFrame();
 	    public static void createVendorFrame() throws ParseException {
@@ -62,7 +63,7 @@ import javax.swing.text.MaskFormatter;
 		    
 		    StreetAddress.setBounds(100, 275, 1000, 50);
 		    panel.add(StreetAddress);
-		    checkVendor(StreetAddress);
+		    checkIntVendor(StreetAddress);
 		    
 		    JLabel State = new JLabel ("State:");
 			State.setFont(new Font("Sans Serif", Font.PLAIN, 20));
@@ -86,7 +87,7 @@ import javax.swing.text.MaskFormatter;
 		    
 		    VendorCity.setBounds(350,400, 200, 50);
 		    panel.add(VendorCity);
-		    //checkVendor(VendorCity);
+		    checkVendor(VendorCity);
 		    
 		    JLabel ZipCode = new JLabel ("Zip Code:");
 		    ZipCode.setFont(new Font("Sans Serif", Font.PLAIN, 20));
@@ -97,7 +98,7 @@ import javax.swing.text.MaskFormatter;
 		    
 		    VendorZipCode.setBounds(600, 400, 100, 50);
 		    panel.add(VendorZipCode);
-		    checkVendor(VendorZipCode);
+		    checkIntVendor(VendorZipCode);
 		    
 		    //creates new phone label
 		    JLabel phonelb = new JLabel("Enter Vendor Phone Number:");
@@ -111,7 +112,7 @@ import javax.swing.text.MaskFormatter;
 		    phoneentry.setFont(new Font("Sans Serif", Font.PLAIN, 25));
 		    phoneentry.setBounds(100,550,250,50);
 		    panel.add(phoneentry);
-		    checkVendor(phoneentry);
+		    checkIntVendor(phoneentry);
 		    
 		    //creates new fax label
 		    JLabel faxlb = new JLabel("Enter Vendor Fax Number:");
@@ -124,7 +125,7 @@ import javax.swing.text.MaskFormatter;
 		    faxentry.setFont(new Font("Sans Serif", Font.PLAIN, 25));
 		    faxentry.setBounds(400,550,250,50);
 		    panel.add(faxentry);
-		    checkVendor(faxentry);
+		    checkIntVendor(faxentry);
 		    
 		    JButton addbutton = new JButton("Add");
 		    panel.add(addbutton);
@@ -138,27 +139,52 @@ import javax.swing.text.MaskFormatter;
 		    backButton.setBounds(650, 850, 100, 50);
 		    backButton.setFont(new Font("Sans Serif", Font.PLAIN, 20));
 		    backButton.addActionListener(new Action11());
+<<<<<<< HEAD
+=======
+		    
+		    
+>>>>>>> 228ea6fe27851dbe13e27507c79649e5faa5547f
 		}
 	
 	
 	public static void checkVendor(JTextField field){
-		int integer;
-		try{
-			error.setVisible(false);
-			integer=Integer.parseInt(field.getText());
-		}catch (NumberFormatException e){
+		error.setVisible(false);
+		if(!field.getText().equals(null)){
+			for(char check:field.getText().toCharArray()){
+				if(Character.isDigit(check)){
+					error.setVisible(true);
+					error.setFont(new Font("Sans Serif", Font.PLAIN, 25));
+					error.setForeground(Color.red);
+					error.setBounds(field.getBounds());
+					errorPanel.add(error);
+				}
+			}
+		}if(field.getText().equals(null)){
 			error.setVisible(true);
-			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
-			error.setForeground(Color.red);
-			error.setBounds(200,250,250,50);
-			errorPanel.add(error);
-		}
-		if(field.equals(null)){
-			error.setVisible(true);
-			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
+			error.setFont(new Font("Sans Serif", Font.PLAIN, 25));
 			error.setForeground(Color.red);
 			error.setBounds(field.getBounds());
 			errorPanel.add(error);
+		}
+	}
+	public static void checkIntVendor(JTextField field){
+		error2.setVisible(false);
+		if(!field.getText().equals(null)){
+			for(char check:field.getText().toCharArray()){
+				if(Character.isAlphabetic(check)){
+					error2.setVisible(true);
+					error2.setFont(new Font("Sans Serif", Font.PLAIN, 25));
+					error2.setForeground(Color.red);
+					error2.setBounds(field.getBounds());
+					errorPanel.add(error2);
+				}
+			}
+		}if(field.getText().equals(null)){
+			error2.setVisible(true);
+			error2.setFont(new Font("Sans Serif", Font.PLAIN, 25));
+			error2.setForeground(Color.red);
+			error2.setBounds(field.getBounds());
+			errorPanel.add(error2);
 		}
 	}
 	

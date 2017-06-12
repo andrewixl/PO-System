@@ -17,6 +17,7 @@ public class Add_Club {
 	
 	public static JFrame addClubFrame = new JFrame();
 	public static JLabel error=new JLabel("*");
+	public static JLabel error2=new JLabel("*");
 	public static JPanel errorPanel=new JPanel();
 	
 	public static void addClub() throws Exception{
@@ -80,7 +81,7 @@ public class Add_Club {
 	    asbAccountNumberField.setBounds(400,250,250,50);
 	    panel.add(asbAccountNumberLabel);
 	    panel.add(asbAccountNumberField);
-	    checkError(asbAccountNumberField);
+	    checkIntError(asbAccountNumberField);
 	}
 	
 	
@@ -90,22 +91,43 @@ public class Add_Club {
 	}
 	
 	public static void checkError(JTextField field){
-		try{
-			error.setVisible(false);
-			int integer=Integer.parseInt(field.getText());
-		}catch (NumberFormatException e){
+		error.setVisible(false);
+		if(!field.getText().equals(null)){
+			for(char check:field.getText().toCharArray()){
+				if(Character.isDigit(check)){
+					error.setVisible(true);
+					error.setFont(new Font("Sans Serif", Font.PLAIN, 25));
+					error.setForeground(Color.red);
+					error.setBounds(field.getBounds());
+					errorPanel.add(error);
+				}
+			}
+		}if(field.getText().equals(null)){
 			error.setVisible(true);
-			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
+			error.setFont(new Font("Sans Serif", Font.PLAIN, 25));
 			error.setForeground(Color.red);
 			error.setBounds(field.getBounds());
 			errorPanel.add(error);
 		}
-		if(field.equals(null)){
-			error.setVisible(true);
-			error.setFont(new Font("Sans Serif", Font.PLAIN, 40));
-			error.setForeground(Color.red);
-			error.setBounds(field.getBounds());
-			errorPanel.add(error);
+	}
+	public static void checkIntError(JTextField field){
+		error2.setVisible(false);
+		if(!field.getText().equals(null)){
+			for(char check:field.getText().toCharArray()){
+				if(Character.isAlphabetic(check)){
+					error2.setVisible(true);
+					error2.setFont(new Font("Sans Serif", Font.PLAIN, 25));
+					error2.setForeground(Color.red);
+					error2.setBounds(field.getBounds());
+					errorPanel.add(error2);
+				}
+			}
+		}if(field.getText().equals(null)){
+			error2.setVisible(true);
+			error2.setFont(new Font("Sans Serif", Font.PLAIN, 25));
+			error2.setForeground(Color.red);
+			error2.setBounds(field.getBounds());
+			errorPanel.add(error2);
 		}
 	}
 }
