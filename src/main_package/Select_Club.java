@@ -1,5 +1,6 @@
 package main_package;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
@@ -22,12 +23,14 @@ public class Select_Club {
 	public static JFrame selectclubframe = new JFrame("PO System");
 	public static JComboBox<String> ClubList;
 	public static int cellStartValue;
+	public static JLabel error=new JLabel("*");
+	public static JPanel panel = new JPanel();
 	//public static String fonttype2 = Main.fonttype;
 	public static void selectClub() throws Exception
 	{
 		System.out.println(Main.fonttype);
 		getClubs();
-		JPanel panel = new JPanel();
+		
 		selectclubframe.setBounds(500,500,500,500);
 		selectclubframe.add(panel);
 		selectclubframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -70,7 +73,7 @@ public class Select_Club {
 	}
 	static class addclub implements ActionListener {        
 		  public void actionPerformed (ActionEvent e){ 
-			try {
+				try {
 				Add_Club.addClub();
 				selectclubframe.dispose();
 				//selectclubframe.setVisible(false);
@@ -81,8 +84,17 @@ public class Select_Club {
 		} 
 	static class selectclub implements ActionListener {        
 	  public void actionPerformed (ActionEvent e){ 
-		StartOptions.startOptions((String) ClubList.getSelectedItem());
+		  error.setVisible(false);
+		  if(ClubList.getSelectedItem().equals("Select Club")){
+				error.setFont(new Font("Sans Serif", Font.PLAIN, 25));
+				error.setForeground(Color.red);
+				error.setBounds(75,165, 25, 25);
+				panel.add(error);
+				error.setVisible(true);
+		  }else{
+			  StartOptions.startOptions((String) ClubList.getSelectedItem());
 		selectclubframe.dispose();
+		  }
 	  }
 	}
 	static class settings implements ActionListener {        
