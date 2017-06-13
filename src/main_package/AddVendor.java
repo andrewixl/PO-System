@@ -139,11 +139,7 @@ import javax.swing.text.MaskFormatter;
 		    backButton.setBounds(650, 850, 100, 50);
 		    backButton.setFont(new Font("Sans Serif", Font.PLAIN, 20));
 		    backButton.addActionListener(new Action11());
-<<<<<<< HEAD
-=======
-		    
-		    
->>>>>>> 228ea6fe27851dbe13e27507c79649e5faa5547f
+
 		}
 	
 	

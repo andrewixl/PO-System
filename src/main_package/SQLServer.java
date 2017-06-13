@@ -103,7 +103,7 @@ public class SQLServer {
 		String query = " insert into club_data.vendor_list (vendor_name, vendor_address, vendor_state, vendor_city, vendor_zipcode, vendor_phone, vendor_fax)"
 		          + " values (?, ?, ?, ?, ?, ?, ?)";
 		        // create the mysql insert preparedstatement       
-		        PreparedStatement preparedStmt = (PreparedStatement) conn.prepareStatement(query);
+		        PreparedStatement preparedStmt = conn.prepareStatement(query);
 		        preparedStmt.setString (1, AddVendor.EnterVendors.getText());
 		        preparedStmt.setString (2, AddVendor.StreetAddress.getText());
 		        preparedStmt.setString (3, String.valueOf(AddVendor.VendorState.getSelectedItem()));//
