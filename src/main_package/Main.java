@@ -14,12 +14,12 @@ public class Main {
 	public static JFrame loadingframe = new JFrame("PO System");
 	
 	//Andrew's Path Code for Resources
-	public static String expensesfilepath = ("C:\\Program Files (x86)\\PO-System\\Expenses.ods");
-	public static String localfilepath = ("C:\\Program Files (x86)\\PO-System\\local.ods");
+	//public static String expensesfilepath = ("C:\\Program Files (x86)\\PO-System\\Expenses.ods");
+	//public static String localfilepath = ("C:\\Program Files (x86)\\PO-System\\local.ods");
 	
 	//Roger's Path Code for Resources
-	//public static String expensesfilepath = ("C:\\Users\\linrog18\\Documents\\PO-System\\resources\\Expenses.ods");
-	//public static String localfilepath = ("C:\\Users\\linrog18\\Documents\\PO-System\\resources\\local.ods");
+	public static String expensesfilepath = ("C:\\Users\\linrog18\\Documents\\PO-System\\resources\\Expenses.ods");
+	public static String localfilepath = ("C:\\Users\\linrog18\\Documents\\PO-System\\resources\\local.ods");
 	
 	//Julia's Path Code for Resources
 	//public static String expensesfilepath = ("/Users/juliapinx/Documents/GitHub/PO-System/resources/Expenses.ods");
