@@ -2,8 +2,13 @@ package main_package;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.FileInputStream;
+import java.sql.SQLException;
 import java.util.*;
+
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -12,6 +17,8 @@ import javax.swing.plaf.basic.BasicSliderUI.ChangeHandler;
 import java.text.ParseException;
 import com.aspose.cells.Workbook;
 import com.aspose.cells.Worksheet;
+
+import main_package.AddVendor.ActionAdd;
 
 public class Add_Club {
 	
@@ -82,6 +89,13 @@ public class Add_Club {
 	    panel.add(asbAccountNumberLabel);
 	    panel.add(asbAccountNumberField);
 	    checkIntError(asbAccountNumberField);
+	    
+	    JButton addbutton = new JButton("Add");
+	    panel.add(addbutton);
+	    addbutton.setBounds(800,850,100,50);
+	    addbutton.setFont(new Font("Sans Serif", Font.PLAIN, 20));
+	    //adds action listener for button4
+	    addbutton.addActionListener (new addclub());
 	}
 	
 	
@@ -130,4 +144,18 @@ public class Add_Club {
 			errorPanel.add(error2);
 		}
 	}
+	
+	static class addclub  implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			try {
+				SQLServer.updateClubList();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
 }
+}
+

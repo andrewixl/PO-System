@@ -200,6 +200,7 @@ import javax.swing.text.MaskFormatter;
 		public void actionPerformed(ActionEvent arg0) {
 			try {
 				SQLServer.updateVendorList();
+				Vendorframe.dispose();
 			} catch (SQLException e) {
 				e.printStackTrace();
 				System.out.println("Bad Code");
