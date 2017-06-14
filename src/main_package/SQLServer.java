@@ -39,6 +39,7 @@ public class SQLServer {
 	}   
 	
 	public static void getClubList(String connectionUrl, String dbUser, String dbPwd) throws Exception{
+		try{
 		Connection connect = DriverManager.getConnection(connectionUrl, dbUser, dbPwd);
         System.out.println("conn Available");
        
@@ -68,9 +69,13 @@ public class SQLServer {
         System.out.println(Arrays.toString(clubs));     
         
         statement.close();
+		}catch (Exception e){
+			System.out.print("Bad");
+		}
 	}
 	
 	public static void getVendorList(String connectionUrl, String dbUser, String dbPwd) throws SQLException{
+		try{
 		Connection connect = DriverManager.getConnection(connectionUrl, dbUser, dbPwd);
         System.out.println("conn Available");
        
@@ -100,6 +105,9 @@ public class SQLServer {
         System.out.println(Arrays.toString(vendors));     
         
         statement.close();
+		}catch (Exception e){
+			System.out.print("Bad");
+		}
 	}
 	
 	public static void updateVendorList() throws SQLException{

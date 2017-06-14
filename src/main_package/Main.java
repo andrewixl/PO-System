@@ -27,17 +27,14 @@ public class Main {
 		
 	public static void main(String[] args) throws Exception
 	{
+		try{
 		loadingframe();
 		SQLServer.getconnection();
 		System.out.println(SQLServer.connection);
-		
-		if(SQLServer.connection.equals("true")){
-			System.out.println("wtf");
 		CoreVariables.getCurrentFont();
 		loadingframe.dispose();
 		start();
-		}
-		else{
+		}catch (CommunicationsException e){
 			loadingframe.dispose();
 			nointernetframe();
 		}
