@@ -80,10 +80,12 @@ public class StartOptions {
 			}   
 			static class Action2 extends StartOptions implements ActionListener {        
 			  public void actionPerformed (ActionEvent e) { 
+				options.dispose();
 				StatusProducts.statusProducts();
 			}  
 			static class Action3 implements ActionListener {        
 				  public void actionPerformed (ActionEvent e) { 
+					options.dispose();  
 					GeneratePO.createPOWindow();
 				  }
 				} 

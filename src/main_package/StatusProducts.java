@@ -3,6 +3,7 @@ package main_package;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -18,8 +19,15 @@ public class StatusProducts {
 	public static JFrame statusProducts  = new JFrame();
 	public static JPanel panel = new JPanel();
 	
-	
 	public static JComboBox Vendors = new JComboBox<String>(SQLServer.vendors);
+	
+	public static UtilDateModel modelStart = new UtilDateModel();
+	public static JDatePanelImpl datePanelStart = new JDatePanelImpl(modelStart);
+	public static JDatePickerImpl datePickerStart = new JDatePickerImpl(datePanelStart); 
+	
+	public static UtilDateModel modelEnd = new UtilDateModel();
+	public static JDatePanelImpl datePanelEnd = new JDatePanelImpl(modelEnd);
+	public static JDatePickerImpl datePickerEnd = new JDatePickerImpl(datePanelEnd); 
 	
 	public static void statusProducts(){
 		
@@ -65,22 +73,16 @@ public class StatusProducts {
 		panel.add(endlabel);
 		
 		//Start
-		UtilDateModel model = new UtilDateModel();
-		JDatePanelImpl datePanel = new JDatePanelImpl(model);
-		model.setDate(2017, 6, 1);
-		model.setSelected(true);
-		JDatePickerImpl datePicker = new JDatePickerImpl(datePanel); 
-		datePicker.setBounds(400,150,250,50);
-		panel.add(datePicker);
+		modelStart.setDate(2017, 6, 1);
+		modelStart.setSelected(true);
+		datePickerStart.setBounds(400,150,250,50);
+		panel.add(datePickerStart);
 		
 		//End
-		UtilDateModel model2 = new UtilDateModel();
-		JDatePanelImpl datePanel2 = new JDatePanelImpl(model2);
-		model2.setDate(2017, 6, 1);
-		model2.setSelected(true);
-		JDatePickerImpl datePicker2 = new JDatePickerImpl(datePanel2); 
-		datePicker2.setBounds(700,150,250,50);
-		panel.add(datePicker2);
+		modelEnd.setDate(2017, 6, 1);
+		modelEnd.setSelected(true);
+		datePickerEnd.setBounds(700,150,250,50);
+		panel.add(datePickerEnd);
 	}
 	static class back  implements ActionListener {
 
@@ -94,7 +96,8 @@ public class StatusProducts {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-
+			Date selectedDate;
+			System.out.println(selectedDate= (Date) datePickerStart.getModel().getValue());
 		}	
 	}
 }
