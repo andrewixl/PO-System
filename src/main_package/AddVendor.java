@@ -15,6 +15,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.MaskFormatter;
@@ -200,14 +201,24 @@ import javax.swing.text.MaskFormatter;
 		public void actionPerformed(ActionEvent arg0) {
 			try {
 				SQLServer.updateVendorList();
-				Vendorframe.dispose();
+				int n = JOptionPane.showConfirmDialog(
+			            null,
+			            "Would you like restart now? (Font may not show correctly otherwise)",
+			            "Restart Required",
+			            JOptionPane.YES_NO_OPTION);
+
+			        if(true){
+			        	CoreVariables.restartProgram();
+			        }
+			        else {
+			            JOptionPane.showMessageDialog(null, "Restart Delayed");
+			            Vendorframe.dispose();
+			            AddProduct.createPurchaseWindow();
+			        }     
 			} catch (SQLException e) {
 				e.printStackTrace();
 				System.out.println("Bad Code");
 			}
 		}
-		
-}
-		
-
+	}
 }

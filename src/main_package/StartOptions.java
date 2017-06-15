@@ -80,20 +80,11 @@ public class StartOptions {
 			}   
 			static class Action2 extends StartOptions implements ActionListener {        
 			  public void actionPerformed (ActionEvent e) { 
-				/*try {
-					CheckStatus.checkStatusWindow();
-				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} //catch (IOException e1) {
-					// TODO Auto-generated catch block
-				//	e1.printStackTrace();
-				//}
-			  }*/
+				StatusProducts.statusProducts();
 			}  
 			static class Action3 implements ActionListener {        
 				  public void actionPerformed (ActionEvent e) { 
-					StatusProducts.GeneratePO();
+					GeneratePO.createPOWindow();
 				  }
 				} 
 			static class Action4 implements ActionListener {        

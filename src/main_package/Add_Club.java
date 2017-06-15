@@ -27,6 +27,12 @@ public class Add_Club {
 	public static JLabel error2=new JLabel("*");
 	public static JPanel errorPanel=new JPanel();
 	
+	public static JTextField clubNameField = new JTextField();
+	public static JTextField advisorNameField = new JTextField();
+	public static JTextField advisorEmailField = new JTextField("@issaquah.wednet.edu");
+	public static JTextField asbAccountNameField = new JTextField();
+	public static JTextField asbAccountNumberField = new JTextField();
+	
 	public static void addClub() throws Exception{
 		//FileInputStream fstream = new FileInputStream(Main.clubfilepath);
 		//Workbook wb = new Workbook(fstream);
@@ -42,7 +48,7 @@ public class Add_Club {
 	    
 	    //Creates label and field to enter name of club
 	    JLabel clubNameLabel = new JLabel("Offical Club Name:");
-		JTextField clubNameField = new JTextField();
+		
 		setFont(clubNameLabel, clubNameField);
 		clubNameLabel.setBounds(100,100,250,50);
 		clubNameField.setBounds(100,150,250,50);
@@ -52,7 +58,6 @@ public class Add_Club {
 		
 		//Creates label and field to enter name of advisor
 		JLabel advisorNameLabel = new JLabel("Advisor Name:");
-	    JTextField advisorNameField = new JTextField();
 	    setFont(advisorNameLabel, advisorNameField);
 	    advisorNameLabel.setBounds(400,100,250,50);
 		advisorNameField.setBounds(400,150,250,50);
@@ -62,7 +67,6 @@ public class Add_Club {
 	    
 	    //Creates label and field to enter email of advisor
 	    JLabel advisorEmailLabel = new JLabel("Advisor Email:");
-	    JTextField advisorEmailField = new JTextField("@issaquah.wednet.edu");
 	    setFont(advisorEmailLabel, advisorEmailField);
 	    advisorEmailLabel.setBounds(700,100,250,50);
 	    advisorEmailField.setBounds(700,150,250,50);
@@ -72,7 +76,6 @@ public class Add_Club {
 	    
 	    //Creates label and field to enter asb account name
 	    JLabel asbAccountNameLabel = new JLabel("ASB Account Name:");
-	    JTextField asbAccountNameField = new JTextField();
 	    setFont(asbAccountNameLabel, asbAccountNameField);
 	    asbAccountNameLabel.setBounds(100,200,250,50);
 	    asbAccountNameField.setBounds(100,250,250,50);
@@ -82,7 +85,6 @@ public class Add_Club {
 	    
 	    //Creates label and field to enter the asb account number
 	    JLabel asbAccountNumberLabel = new JLabel("ASB Account Number:");
-	    JTextField asbAccountNumberField = new JTextField();
 	    setFont(asbAccountNumberLabel, asbAccountNumberField);
 	    asbAccountNumberLabel.setBounds(400,200,250,50);
 	    asbAccountNumberField.setBounds(400,250,250,50);
@@ -92,10 +94,17 @@ public class Add_Club {
 	    
 	    JButton addbutton = new JButton("Add");
 	    panel.add(addbutton);
-	    addbutton.setBounds(800,850,100,50);
+	    addbutton.setBounds(950,850,100,50);
 	    addbutton.setFont(new Font("Sans Serif", Font.PLAIN, 20));
 	    //adds action listener for button4
 	    addbutton.addActionListener (new addclub());
+	    
+	    JButton backbutton = new JButton("Back");
+	    panel.add(backbutton);
+	    backbutton.setBounds(800,850,100,50);
+	    backbutton.setFont(new Font("Sans Serif", Font.PLAIN, 20));
+	    //adds action listener for button4
+	    backbutton.addActionListener (new back());
 	}
 	
 	
@@ -145,13 +154,28 @@ public class Add_Club {
 		}
 	}
 	
-	static class addclub  implements ActionListener {
+	static class back implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			try {
+				addClubFrame.dispose();
+				Select_Club.selectClub();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+}
+	static class addclub implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			try {
 				SQLServer.updateClubList();
-			} catch (SQLException e) {
+				addClubFrame.dispose();
+				Select_Club.selectClub();
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}

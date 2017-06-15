@@ -87,7 +87,7 @@ public class AddProduct {
 	    backbutton.setBounds(800,850,100,50);
 	    backbutton.setFont(new Font("Sans Serif", Font.PLAIN, 20));
 	    //adds action listener for button4
-	    backbutton.addActionListener (new Action4());
+	    backbutton.addActionListener (new back());
 	    
 	    //creates quantity label
 	    JLabel label2 = new JLabel("QTY:");
@@ -194,13 +194,6 @@ public class AddProduct {
 	    addVendor.setBounds(400,150,150,50);
 	    addVendor.setFont(new Font("Sans Serif", Font.PLAIN, 20));
 	    addVendor.addActionListener (new Action7());
-	    
-	    //creates confirm button
-	    JButton confirm = new JButton("Confirm");
-	    panel.add(confirm);
-	    confirm.setBounds(1150,850,150,50);
-	    confirm.setFont(new Font("Sans Serif", Font.PLAIN, 20));
-	    confirm.addActionListener (new Action6());
 	}
 	private static BigDecimal truncateDecimal(double x,int numberofDecimals)
 	{
@@ -379,15 +372,6 @@ public class AddProduct {
 			}
 		  }
 		} 
-	static class Action6 implements ActionListener {        
-		  public void actionPerformed (ActionEvent e){ 
-			  try {
-				//addToSpreadsheet();
-			} catch (Exception exc) {
-				System.out.print("Code Failure");
-			}
-		  }
-		} 
 	static class Action7 implements ActionListener {        
 		  public void actionPerformed (ActionEvent e){ 
 			//VendorManagement.createVendorFrame();
@@ -399,5 +383,13 @@ public class AddProduct {
 				e1.printStackTrace();
 			}
 		  }
-		} 
+		}
+	static class back  implements ActionListener {
+
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			addproductframe.dispose();
+			StartOptions.startOptions((String) Select_Club.ClubList.getSelectedItem());
+		}	
+	}
 }

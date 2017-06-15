@@ -29,7 +29,6 @@ public class SQLServer {
 	        try {
 	        	getClubList(connectionUrl, dbUser, dbPwd);
 	        	getVendorList(connectionUrl, dbUser, dbPwd);
-	        	connection = "true";
 	        } catch (CommunicationsException e) {
 	            e.printStackTrace();
 	            System.out.println("fetch option error\n"+e.getLocalizedMessage());
@@ -69,8 +68,10 @@ public class SQLServer {
         System.out.println(Arrays.toString(clubs));     
         
         statement.close();
+        connection = "true";
 		}catch (Exception e){
-			System.out.print("Bad");
+			System.out.println("Error");
+			connection = "false";
 		}
 	}
 	
@@ -106,7 +107,7 @@ public class SQLServer {
         
         statement.close();
 		}catch (Exception e){
-			System.out.print("Bad");
+			System.out.println("Error");
 		}
 	}
 	
@@ -138,15 +139,15 @@ public class SQLServer {
 		          + " values (?, ?, ?, ?, ?)";
 		        // create the mysql insert preparedstatement       
 		        PreparedStatement preparedStmt = (PreparedStatement) conn.prepareStatement(query);
-		        preparedStmt.setString (1, AddVendor.EnterVendors.getText());
-		        preparedStmt.setString (2, AddVendor.StreetAddress.getText());
-		        preparedStmt.setString (3, String.valueOf(AddVendor.VendorState.getSelectedItem()));
-		        preparedStmt.setString (4, AddVendor.VendorCity.getText());
-		        preparedStmt.setInt    (5, Integer.parseInt(AddVendor.VendorZipCode.getText()));
+		        preparedStmt.setString (1, Add_Club.clubNameField.getText());
+		        preparedStmt.setString (2, Add_Club.advisorNameField.getText());
+		        preparedStmt.setString (3, Add_Club.advisorEmailField.getText());
+		        preparedStmt.setString (4, Add_Club.asbAccountNameField.getText());
+		        preparedStmt.setString (5, Add_Club.asbAccountNumberField.getText());
 
 		        // execute the preparedstatement
 		        preparedStmt.execute();
 		        
-		        conn.close();	        
+		        conn.close();	 
 	}
 }

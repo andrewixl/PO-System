@@ -93,7 +93,7 @@ public class Select_Club {
 				error.setVisible(true);
 		  }else{
 			  StartOptions.startOptions((String) ClubList.getSelectedItem());
-		selectclubframe.dispose();
+			  selectclubframe.dispose();
 		  }
 	  }
 	}
