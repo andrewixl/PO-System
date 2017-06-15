@@ -24,6 +24,7 @@ public class StatusProducts {
 	public static UtilDateModel modelStart = new UtilDateModel();
 	public static JDatePanelImpl datePanelStart = new JDatePanelImpl(modelStart);
 	public static JDatePickerImpl datePickerStart = new JDatePickerImpl(datePanelStart); 
+	//public static JDatePickerImpl datePickerStart = new JDatePickerImpl(datePanelStart, new DateLabelFormatter());
 	
 	public static UtilDateModel modelEnd = new UtilDateModel();
 	public static JDatePanelImpl datePanelEnd = new JDatePanelImpl(modelEnd);
