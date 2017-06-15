@@ -52,8 +52,7 @@ public class AddProduct {
 	public static BigDecimal finalcostval;
 	
 
-	public static void createPurchaseWindow()
-	{
+	public static void createPurchaseWindow(){
 		//creates new window
 		StartOptions.options.dispose();
 		Main.currentFrame = "addproductframe";
@@ -195,8 +194,7 @@ public class AddProduct {
 	    addVendor.setFont(new Font("Sans Serif", Font.PLAIN, 20));
 	    addVendor.addActionListener (new Action7());
 	}
-	private static BigDecimal truncateDecimal(double x,int numberofDecimals)
-	{
+	private static BigDecimal truncateDecimal(double x,int numberofDecimals){
 	    if ( x > 0) {
 	        return new BigDecimal(String.valueOf(x)).setScale(numberofDecimals, BigDecimal.ROUND_FLOOR);
 	    } else {
@@ -204,8 +202,7 @@ public class AddProduct {
 	    }
 	}
 	
-	public static void calculateSubtotal()
-	{
+	public static void calculateSubtotal(){
 		try {
 			invalid.setVisible(false);
 			quantity = Double.parseDouble(textfield.getText());
@@ -215,8 +212,7 @@ public class AddProduct {
 			invalid.setFont(new Font("Sans Serif", Font.PLAIN, 40));
 			invalid.setBounds(170,355,100,50);
 			panel.add(invalid);
-		}
-		try {
+		}try {
 			invalid2.setVisible(false);
 			unitcost = Double.parseDouble(unitcosttb.getText());
 		} catch (NumberFormatException e) {
@@ -234,8 +230,7 @@ public class AddProduct {
 		panel.add(subtotaltb);
 		subtotaltb.setEditable(false);
 	}
-	public static void calculateTax()
-	{
+	public static void calculateTax(){
 		tax = (subtotal+shipping)*0.095;
 		taxval = truncateDecimal((subtotal+shipping)*0.095,2);
 		String tax2 = "$" + String.valueOf(taxval);
@@ -248,8 +243,7 @@ public class AddProduct {
 		 panel.add(taxtb);
 		 taxtb.setEditable(false);
 	}
-	public static void calculateShipping()
-	{
+	public static void calculateShipping(){
 		shipping = subtotal*0.1;
 		shippingval = truncateDecimal(subtotal*0.1,2);
 		String shipping2 = "$" + String.valueOf(shippingval);
@@ -262,8 +256,8 @@ public class AddProduct {
 	    panel.add(shippingtb);
 	    shippingtb.setEditable(false);
 	}
-	public static void calculateFinalCost()
-	{
+	public static void calculateFinalCost(){
+		//Calculates total cost of order
 		finalcost = subtotal + tax + shipping;
 		finalcostval = truncateDecimal(finalcost, 2);
 		String finalcost2 = "$" + String.valueOf(finalcostval);
@@ -274,17 +268,15 @@ public class AddProduct {
 	    panel.add(finalcosttb);
 	    finalcosttb.setEditable(false);
 	}
-	public static void setCurrentVendor(String str)
-	{
+	public static void setCurrentVendor(String str){
 		currentVendor = str;
 	}
-	public static void checkVendor()
-	{
+	public static void checkVendor(){
+		//Verify the chosen option
 		String currentVendor = String.valueOf(selectVendor.getSelectedItem());
 		setCurrentVendor(currentVendor);
 		invalid3.setVisible(false);
-		if (currentVendor.equals("Select Vendor"))
-		{
+		if (currentVendor.equals("Select Vendor")){
 			invalid3.setVisible(true);
 			invalid3.setForeground(Color.red);
 			invalid3.setFont(new Font("Sans Serif", Font.PLAIN, 40));
@@ -292,12 +284,12 @@ public class AddProduct {
 			panel.add(invalid3);
 		}
 	}
-	public static void setProductNumberAndDescription()
-	{
+	public static void setProductNumberAndDescription(){
 		productNumber = pntf.getText();
 		productDescription = pdtf.getText();
 		invalid4.setVisible(false);
 		invalid5.setVisible(false);
+		//Error if nothing entered
 		if(productNumber.equals(" ")){
 			invalid4.setVisible(true);
 			invalid4.setForeground(Color.red);
