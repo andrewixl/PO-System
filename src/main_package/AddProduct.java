@@ -14,8 +14,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import main_package.StartOptions.Action2.Action4;
-
 public class AddProduct {
 	public static JPanel panel = new JPanel();
 

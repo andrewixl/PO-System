@@ -1,14 +1,12 @@
 package main_package;
 
-import java.awt.Font;
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.Array;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.Arrays;
-import java.util.Scanner;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
