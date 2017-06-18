@@ -3,6 +3,9 @@ package main_package;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 import javax.swing.JButton;
@@ -23,8 +26,8 @@ public class StatusProducts {
 	
 	public static UtilDateModel modelStart = new UtilDateModel();
 	public static JDatePanelImpl datePanelStart = new JDatePanelImpl(modelStart);
-	public static JDatePickerImpl datePickerStart = new JDatePickerImpl(datePanelStart); 
-	//public static JDatePickerImpl datePickerStart = new JDatePickerImpl(datePanelStart, new DateLabelFormatter());
+	//public static JDatePickerImpl datePickerStart = new JDatePickerImpl(datePanelStart); 
+	public static JDatePickerImpl datePickerStart = new JDatePickerImpl(datePanelStart);
 	
 	public static UtilDateModel modelEnd = new UtilDateModel();
 	public static JDatePanelImpl datePanelEnd = new JDatePanelImpl(modelEnd);
@@ -97,8 +100,13 @@ public class StatusProducts {
 
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			Date selectedDate;
-			System.out.println(selectedDate= (Date) datePickerStart.getModel().getValue());
+			Date selectedDate = (Date) datePickerStart.getModel().getValue();
+			String pattern  = "MM/dd/yyyy";
+			DateFormat formatter = new SimpleDateFormat(pattern);
+			String formatteddate = formatter.format(selectedDate);
+			String[] datesplit = formatteddate.split("/");
+			System.out.println(Arrays.toString(datesplit));
+			
 		}	
 	}
 }

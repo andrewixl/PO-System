@@ -3,9 +3,9 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="C:/Users/linrog18/Documents/PO-System/resources/aspose-cells-17.1.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/linrog18/Documents/PO-System/resources/bcprov-jdk16-146.jar"/>
-	<classpathentry kind="lib" path="C:/Users/linrog18/Documents/PO-System/resources/mysql-connector-java-5.1.42-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/linrog18/Downloads/jdatepicker-1.3.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/burge/workspace/Skyline-Spartabots-PO-System/PO-System/Jar Files/Jar Files/aspose-cells-17.1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/burge/workspace/Skyline-Spartabots-PO-System/PO-System/Jar Files/Jar Files/bcprov-jdk16-146.jar"/>
+	<classpathentry kind="lib" path="C:/Users/burge/workspace/Skyline-Spartabots-PO-System/PO-System/Jar Files/Jar Files/mysql-connector-java-5.1.42-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/burge/workspace/Skyline-Spartabots-PO-System/PO-System/Jar Files/Jar Files/jdatepicker-1.3.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

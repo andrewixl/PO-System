@@ -16,33 +16,13 @@ public class Main {
 	public static JFrame loadingframe2 = new JFrame("PO System");
 	
 	//Andrew's Path Code for Resources
-	//public static String expensesfilepath = ("C:\\Program Files (x86)\\PO-System\\Expenses.ods");
-	//public static String localfilepath = ("C:\\Program Files (x86)\\PO-System\\local.ods");
-	
-	//Roger's Path Code for Resources
-	public static String expensesfilepath = ("C:\\Users\\linrog18\\Documents\\PO-System\\resources\\Expenses.ods");
-	public static String localfilepath = ("C:\\Users\\linrog18\\Documents\\PO-System\\resources\\local.ods");
-	
-	//Julia's Path Code for Resources
-	//public static String expensesfilepath = ("/Users/juliapinx/Documents/GitHub/PO-System/resources/Expenses.ods");
-	//public static String localfilepath = ("/Users/juliapinx/Documents/GitHub/PO-System/resources/local.ods");
+	public static String expensesfilepath = ("C:\\Program Files (x86)\\PO-System\\Expenses.ods");
+	public static String localfilepath = ("C:\\Program Files (x86)\\PO-System\\local.ods");
+	public static String licensefilepath = ("C:\\Program Files (x86)\\PO-System\\License.txt");
 		
 	public static void main(String[] args) throws Exception
 	{
-		startprogram();
-	}
-	public static void startprogram() throws Exception{
-		loadingframe();
-		SQLServer.getconnection();
-		if (SQLServer.connection.equals("true")){
-		CoreVariables.getCurrentFont();
-		loadingframe.dispose();
-		start();
-		}
-		else{
-			loadingframe.dispose();
-			nointernetframe();
-		}
+		StartUp.startprogram(); 
 	}
 	public static void start() throws Exception
 	{
@@ -100,7 +80,7 @@ public class Main {
 		public void actionPerformed(ActionEvent arg0) {
 			loadingframe2.dispose();
 			try {
-				startprogram();
+				StartUp.testConnection();
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

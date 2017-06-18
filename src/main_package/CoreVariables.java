@@ -24,6 +24,7 @@ public class CoreVariables {
 		Settings.settingsframe.dispose();
 		AddProduct.addproductframe.dispose();
 		AddVendor.Vendorframe.dispose();
+		Select_Club.ClubList = null;
 		try {
 			Main.startprogram();
 		} catch (Exception e) {

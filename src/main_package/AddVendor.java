@@ -206,7 +206,7 @@ import javax.swing.text.MaskFormatter;
 			            JOptionPane.YES_NO_OPTION);
 
 			        if(true){
-			        	CoreVariables.restartProgram();
+			        	StartOptions.startOptions((String) Select_Club.ClubList.getSelectedItem());
 			        }
 			        else {
 			            JOptionPane.showMessageDialog(null, "Restart Delayed");
