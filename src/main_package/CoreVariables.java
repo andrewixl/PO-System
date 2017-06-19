@@ -26,7 +26,7 @@ public class CoreVariables {
 		AddVendor.Vendorframe.dispose();
 		Select_Club.ClubList = null;
 		try {
-			Main.startprogram();
+			StartUp.startprogram();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
